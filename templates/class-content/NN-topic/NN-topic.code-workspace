@@ -1,0 +1,10 @@
+{
+  "folders": [{ "path": "." }],
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder}/../.venv",
+    "jupyter.notebookFileRoot": "${workspaceFolder}"
+  },
+  "extensions": {
+    "recommendations": ["ms-python.python", "ms-toolsai.jupyter"]
+  }
+}

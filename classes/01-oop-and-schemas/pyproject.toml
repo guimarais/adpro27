@@ -1,0 +1,12 @@
+[project]
+name = "adpro-class-01"
+version = "0.1.0"
+description = "Advanced Programming for Data Science: OOP and schemas"
+requires-python = ">=3.11"
+dependencies = ["ipykernel>=6,<8", "pydantic>=2,<3"]
+
+[dependency-groups]
+dev = ["nbclient>=0.10,<1", "nbconvert>=7,<8"]
+
+[tool.uv]
+package = false

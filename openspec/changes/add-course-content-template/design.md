@@ -15,6 +15,8 @@ The agreed order is:
 
 Current lessons are Jupyter notebooks with Python examples elsewhere in the repository. Their exercise callouts use HTML, but they do not have a consistent solution-loading or exercise metadata convention. No Markdown/notebook synchronization system is configured.
 
+The supported teaching environment is **VS Code desktop**, with Microsoft's Python and Jupyter extensions and a local uv environment selected explicitly as the notebook kernel.
+
 ## Goals / Non-Goals
 
 ### Goals
@@ -41,6 +43,8 @@ Current lessons are Jupyter notebooks with Python examples elsewhere in the repo
 
 The notebook holds explanations, small demonstrations, exercise prompts, answer space, and solution-loader cells. Python files hold reusable functions/classes and exercise/reference implementations. A short `README.md` gives launch instructions and links to the lesson and supporting files.
 
+Each numbered class also has a matching `.code-workspace` file. Its sole folder is the class directory, `jupyter.notebookFileRoot` is `${workspaceFolder}`, and `python.defaultInterpreterPath` points to the shared uv environment directory. Standard Python and Jupyter extensions are recommended in the workspace. The README explains opening that workspace, selecting the notebook kernel, and recovering when VS Code remembers a different environment. JupyterLab is not a runtime dependency.
+
 Keep each explanation in one authoritative location. The README links to the lesson rather than duplicating it. The notebook imports or points to application modules instead of copying whole modules into cells.
 
 Markdown-only lessons would require students to move between prose and an execution surface. Notebook-only applications would weaken the course's module, testing, and Git goals. The hybrid gives each format a specific job without introducing automatic synchronization.
@@ -55,6 +59,7 @@ templates/class-content/
   NN-topic/
     README.md
     NN-topic.ipynb
+    NN-topic.code-workspace
     examples/
     exercises/
     solutions/
@@ -68,6 +73,7 @@ templates/class-content/
     01-oop-and-schemas/
       README.md
       01-oop-and-schemas.ipynb
+      01-oop-and-schemas.code-workspace
       examples/
       exercises/
       solutions/
@@ -75,7 +81,9 @@ templates/class-content/
       fixtures/
 ```
 
-`NN` and `topic` are explicit template placeholders. When copied into a real block, use the two-digit number and the matching topic slug above. Do not use `00` for the first class or `01.1` to number a separate class notebook. Supporting Python filenames use valid identifiers such as `exercise_01_1.py`.
+`NN` and `topic` are explicit template placeholders. When copied into a real block, use the two-digit number and the matching topic slug above. The first class is `01`, the second `02`; `01.1` is reserved for a lesson part within class `01`. Supporting Python filenames use valid identifiers such as `exercise_01_1.py`.
+
+The later `author-class-01-oop-and-schemas` change introduces an approved multipart variant: the class remains `01-oop-and-schemas`, while its ordered lesson parts use `01.1-topic` through `01.5-topic`. One class-level workspace and README cover those parts. Their exercises use full lesson-prefixed IDs such as `01.2.E1`, while this original single-notebook template retains its existing IDs. Small week-01 definitions may be repeated to make each part executable independently. The shared checker supports both conventions and aggregates multipart timing at class level.
 
 Only include meaningful supporting files in an authored class; document optional directories instead of filling them with dummy programs. Every provided loader, however, must point to an existing solution file. Include a short class-01 specimen under `example/` so it is clearly a demonstration of the format rather than the finished first class.
 
@@ -132,7 +140,7 @@ After each exercise prompt and answer space, provide a separate code cell:
 # %load solutions/exercise_01_1.py
 ```
 
-Keep the magic commented in the distributed notebook. An untouched Run All therefore does not reveal solutions. Students choose to uncomment the command; IPython loads the file into the frontend for inspection. In a standard notebook frontend the invoking cell is replaced with the loaded source; executing that populated cell is a separate action. Confirm this interaction in the supported editor. [IPython `%load`](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load).
+Keep the magic commented in the distributed notebook. An untouched Run All therefore does not reveal solutions. Students choose to uncomment the command; IPython returns a `set_next_input` payload with `replace=true`, which VS Code's Jupyter extension handles as a replacement of the invoking cell. Executing that populated cell is a separate action. Confirm the end-to-end interaction in VS Code; headless kernel execution alone is not a frontend test. [IPython `%load`](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load).
 
 The answer cell remains separate because `%load` can replace its invoking cell. Solution files include an explanation, the reference implementation where relevant, and a small expected result. They work from the documented setup rather than depending on an earlier unfinished student answer.
 
@@ -142,15 +150,15 @@ Active `%load` cells would expose solutions during Run All. Collapsible inline s
 
 ### 6. Make the working directory and release state explicit
 
-Relative `%load` paths resolve from the kernel's working directory. Document launching the notebook from the numbered class directory and include a small visible setup check for its `solutions/` directory. Do not silently change directories, fetch a solution from a URL, or modify `sys.path` as a path-recovery mechanism.
+Relative `%load` paths resolve from the kernel's working directory. Document opening the numbered class workspace in VS Code, selecting the uv environment as the notebook kernel, and checking its printed interpreter path. Include a visible setup check for the local `solutions/` directory. Recover directory errors by reopening the workspace and restarting the kernel. Do not silently change directories, fetch a solution from a URL, or modify `sys.path` as a path-recovery mechanism.
 
-The authoring guide supplies environment instructions and identifies any specimen dependencies. Use the agreed uv workflow for the runnable specimen and explain the minimal week-01 launch steps without requiring prior Git or package-management instruction. The template README has clear authoring placeholders for the future class's dependency/run instructions; the worked specimen's instructions are fully resolved.
+The authoring guide supplies environment instructions and identifies any specimen dependencies. Use the agreed uv workflow for the runnable specimen and explain the minimal week-01 setup without requiring prior Git or package-management instruction. Runtime dependencies are ipykernel and Pydantic; nbclient/nbconvert are authoring dependencies. No browser notebook server is required. The template README has clear authoring placeholders for the future class's dependency/run instructions; the worked specimen's instructions are fully resolved.
 
 Distributed notebooks have empty outputs and null execution counts. Release inspection also verifies that every `solution-loader` cell contains only the documented commented loader, not loaded solution source. Clearing outputs or restarting a kernel cannot undo source inserted by `%load`.
 
 ### 7. Verify the artifact, not just the OpenSpec structure
 
-Validate notebook format and metadata; inspect timing, IDs, links, file paths, exercise readability, and solution source state. Execute the unmodified template and specimen from a fresh kernel in offline/replay mode. Unanswered exercise cells and optional checks must not make Run All fail. Separately verify reveal/inspect/execute behavior on a temporary notebook copy in a supported Jupyter frontend, preserving the distributable source.
+Validate notebook format and metadata, VS Code workspace configuration, timing, IDs, links, file paths, exercise readability, and solution source state. Execute the unmodified template and specimen from a fresh kernel in offline/replay mode. Unanswered exercise cells and optional checks must not make Run All fail. Separately verify reveal/inspect/execute behavior on a temporary notebook copy in VS Code's notebook editor, preserving the distributable source. Record headless checks and actual VS Code GUI checks separately.
 
 Use existing notebook validation/execution tools and documented checks; do not introduce a generator, service, or large validation framework. Notebook tooling added for the specimen should be declared in its environment. The implementation tasks include visual review because structural validity does not establish a readable exercise highlight.
 
@@ -169,4 +177,4 @@ Add the template and specimen alongside the current materials. Document how to c
 
 ## Open Questions
 
-No user-facing design decisions remain. Implementers must verify `%load` in the supported notebook frontend and declare/test the specimen environment as part of the tasks below.
+No user-facing design decisions remain. End-to-end `%load` and visual checks must be performed in VS Code's notebook editor; record them as pending when that frontend cannot be controlled in the verification environment.

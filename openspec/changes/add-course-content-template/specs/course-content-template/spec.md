@@ -15,12 +15,27 @@ The implementation SHALL provide a reusable class-content template, an authoring
 
 ### Requirement: Two-digit class numbering
 
-An instantiated class directory and its main notebook SHALL begin with the same two-digit class number from `01` through `06`, followed by the documented topic slug. The literal reusable template SHALL use explicit `NN` and `topic` placeholders. Subtopic or exercise identifiers SHALL NOT replace the class number.
+An instantiated class directory SHALL begin with a two-digit class number from `01` through `06`, followed by the documented topic slug. A single-notebook class SHALL use the same stem for its main notebook. A multipart class SHALL retain that directory and use ordered notebook stems such as `01.1-topic`, `01.2-topic`, with an index defining reading order. The literal reusable template SHALL use explicit `NN` and `topic` placeholders. Lesson and exercise IDs SHALL remain distinguishable.
 
 #### Scenario: First two classes are instantiated
 - **WHEN** an author creates the OOP block and reproducible-projects block
 - **THEN** their directories are `01-oop-and-schemas` and `02-reproducible-python-projects`
 - **AND** their main notebooks are `01-oop-and-schemas.ipynb` and `02-reproducible-python-projects.ipynb`
+
+### Requirement: VS Code notebook workflow
+
+Each class SHALL provide a `.code-workspace` file with the same stem as its class directory. It SHALL open only the numbered class directory, recommend Microsoft's Python and Jupyter extensions, define that directory as the notebook working directory, and provide a portable default uv interpreter location. The README SHALL explain environment installation, opening the workspace in VS Code desktop, explicitly selecting the notebook kernel, and recovery when that environment is missing from the picker. Student runtime dependencies SHALL NOT require JupyterLab or another browser notebook server.
+
+#### Scenario: Student opens a class in VS Code
+- **WHEN** a student follows the class README and opens its workspace file
+- **THEN** the numbered class directory is the workspace root
+- **AND** the student can select the uv environment as the notebook kernel and confirm it using the setup cell's printed interpreter path
+- **AND** local imports and solution paths resolve from that class directory
+
+#### Scenario: VS Code remembers another interpreter
+- **WHEN** the previously selected notebook kernel differs from the supplied uv environment
+- **THEN** the instructions show how to obtain the intended interpreter path and select it explicitly
+- **AND** they distinguish the terminal interpreter from the notebook kernel
 
 ### Requirement: Complete weekly learning structure
 
@@ -52,7 +67,7 @@ Every interim exercise SHALL have a prominent Markdown heading containing the wo
 
 ### Requirement: Stable exercise identities
 
-The three interim exercise IDs SHALL be `<class>.1`, `<class>.2`, and `<class>.3`. Independent exercise IDs SHALL use `<class>.H1`, `<class>.H2`, and subsequent numbers. Exercise IDs SHALL be unique within a class and map consistently to local solution filenames. Prompt, answer, and loader cells SHALL carry the same `exercise_id` metadata value and the respective `exercise`, `exercise-answer`, and `solution-loader` tags.
+For the original single-notebook template, the three interim exercise IDs SHALL be `<class>.1`, `<class>.2`, and `<class>.3`; independent IDs SHALL use `<class>.H1`, `<class>.H2`, and subsequent numbers. In multipart classes, IDs SHALL instead include the lesson and explicit exercise type, such as `01.2.E1` and `01.5.H1`; solution filenames SHALL replace dots with underscores and lowercase the exercise suffix. Exercise IDs SHALL be unique within a class and map consistently to local solution filenames. Prompt, answer, and loader cells SHALL carry the same `exercise_id` metadata value and the respective `exercise`, `exercise-answer`, and `solution-loader` tags.
 
 #### Scenario: Class two contains classroom and independent work
 - **WHEN** class `02` is instantiated
@@ -84,13 +99,13 @@ Distributed solution-loader cells SHALL contain a commented `%load solutions/<fi
 - **AND** no reference solution is revealed or executed
 
 #### Scenario: Student opts into a reference solution
-- **WHEN** a student uncomments and runs the documented `%load` line in a supported IPython notebook frontend
+- **WHEN** a student uncomments and runs the documented `%load` line in VS Code's notebook editor using the supplied IPython kernel
 - **THEN** the referenced source becomes available in the loader cell for inspection
 - **AND** loading alone does not execute that Python solution
 
 ### Requirement: Predictable solution path resolution
 
-The README SHALL document the numbered class directory as the notebook kernel's launch directory. The notebook SHALL include a visible setup check for the required local solution path and actionable instructions if it is missing. The solution workflow SHALL NOT silently change the working directory, mutate `sys.path`, or download solution source from a remote URL.
+The README SHALL document opening the numbered class workspace in VS Code to establish the kernel's working directory. The notebook SHALL include a visible setup check for the required local solution path, print the active interpreter path, and give actionable workspace/kernel recovery instructions if the path is missing. The solution workflow SHALL NOT silently change the working directory, mutate `sys.path`, or download solution source from a remote URL.
 
 #### Scenario: Notebook starts from the documented directory
 - **WHEN** the student follows the launch instructions
@@ -121,12 +136,12 @@ The unmodified generic template and worked specimen SHALL execute from a fresh k
 
 ### Requirement: Demonstrated authoring and verification workflow
 
-The authoring guide SHALL explain copying/renaming a block, replacing placeholders, allocating time, creating exercise/solution pairs, and preparing a clean release. The short `01` specimen SHALL demonstrate a runnable example, an interim prompt/answer/loader/solution chain, and an independent exercise chain while identifying itself as a format demonstration. Verification SHALL cover notebook format, numbering, timing, local links/paths, exercise metadata, clean solution source, offline Run All, visual presentation, and an actual `%load` reveal in a supported frontend on a temporary copy.
+The authoring guide SHALL explain copying/renaming a block and its workspace, replacing placeholders, allocating time, creating exercise/solution pairs, and preparing a clean release. The short `01` specimen SHALL demonstrate a runnable example, an interim prompt/answer/loader/solution chain, and an independent exercise chain while identifying itself as a format demonstration. Verification SHALL cover notebook format, numbering, workspace configuration, timing, local links/paths, exercise metadata, clean solution source, offline Run All, visual presentation, and an actual `%load` reveal in VS Code's notebook editor on a temporary copy. Headless and source-inspection checks SHALL be distinguished from actual VS Code GUI verification.
 
 #### Scenario: Author verifies the completed template
 - **WHEN** the author follows the documented verification process
 - **THEN** the structural and execution checks pass
-- **AND** the exercise highlight and solution interaction are checked in a notebook frontend
+- **AND** the exercise highlight and solution interaction are checked in VS Code's notebook editor
 - **AND** the distributed copy still contains commented loaders and empty outputs
 
 ### Requirement: Additive introduction of the template

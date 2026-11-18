@@ -20,6 +20,7 @@ The course project is designed and assessed separately by the instructor. The cl
 | Project workload | Additional to the five weekly hours; managed separately by the instructor |
 | Extensions | Clearly optional; allow up to three additional hours of enrichment per week, separate from project work |
 | Class rhythm | Three cycles of approximately 20 minutes of teaching/demo and 10 minutes of exercise |
+| Teaching environment | VS Code desktop with Microsoft's Python and Jupyter extensions; select the course uv environment as the notebook kernel |
 | Classroom coverage | Introduce the initial portion of each block live; develop and consolidate the rest through guided independent work |
 | Required foundations | Applied OOP, schemas, virtual environments, pip, uv, and Git |
 | AI | Students may use coding assistants throughout, while explaining, testing, and modifying their work; dedicated AI teaching concerns building an application |
@@ -80,11 +81,15 @@ Supply a working starter and a reference solution for every week. A student can 
 
 Keep business logic in Python modules. Notebooks remain useful for explanations, exploration, and short demonstrations. Avoid network calls or model downloads in class constructors: construction should establish a usable object; explicit methods perform external operations.
 
+Use VS Code for both the notebook narrative and Python modules. Supply a class workspace and explicit kernel-selection instructions; the numbered class folder is the workspace root so local imports and `%load solutions/...` resolve consistently. Students need `ipykernel` in the selected environment, not a browser-based JupyterLab server. VS Code installation, extensions, kernel selection, and the first setup check count within week 1's preparation budget.
+
 Every exercise should have a small observable result, a hint, and an answer explanation. A broken environment or absent API key should have a documented recovery path rather than becoming the exercise itself.
 
 Assign the setup and account-preparation portions before the relevant class, using that week's independent-work allowance. This includes week 1's initial run check, week 3's GitHub authentication, and week 6's hosting account preparation; none is uncounted prerequisite work.
 
 ## Week 1: OOP and schemas
+
+Authored materials: [class 01 index and VS Code setup](classes/01-oop-and-schemas/README.md). Read its five self-contained notebooks in order, `01.1` through `01.5`. Parts 01.1–01.3 support the three classroom cycles; parts 01.4–01.5 and the labelled follow-ups provide the independent work. Each file supplies its own runnable definitions, so reading order does not require a shared kernel history.
 
 **Question:** How do we represent data and behavior without letting invalid input spread through a program?
 

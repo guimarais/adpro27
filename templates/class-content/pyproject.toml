@@ -1,0 +1,15 @@
+[project]
+name = "adpro-class-content"
+version = "0.1.0"
+description = "Notebook authoring tools and the class-01 format specimen"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel>=6,<8",
+    "pydantic>=2,<3",
+]
+
+[dependency-groups]
+dev = ["nbclient>=0.10,<1", "nbconvert>=7,<8"]
+
+[tool.uv]
+package = false
