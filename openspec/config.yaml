@@ -1,0 +1,11 @@
+schema: spec-driven
+
+context: |
+  University course: Advanced Programming for Data Science.
+  COURSE_REDESIGN.md is the agreed curriculum and workload blueprint.
+  Students enter with basic Python knowledge; the course has six weekly blocks.
+  Each block includes 90 class minutes and 210 independent-work minutes.
+  The separately designed course project is additional workload.
+  New classes use two-digit numbering 01 through 06.
+  Lesson notebooks guide learning; Python modules hold reusable code;
+  Markdown holds navigation and setup. Solutions are revealed using IPython %load.
