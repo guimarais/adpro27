@@ -1,3 +1,17 @@
+# Legacy course inventory: track only material actually reused in the redesign.
+# See AGENTS.md; prefer placing selected reused files in the active class folder.
+/Examples/
+/Figures/
+/Files/
+/Functions/
+/Linting/
+/Notebooks/
+/Past_Editions/
+/Tests/
+/docs/
+/git_demo/
+/sphinx_demo/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

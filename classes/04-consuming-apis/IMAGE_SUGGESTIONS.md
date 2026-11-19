@@ -1,0 +1,39 @@
+# Creative Commons image suggestions for class 04
+
+**Images pending:** the selected diagram assets have not yet been downloaded, embedded in the notebooks, or visually reviewed. Only source suggestions, license checks, and placement notes are complete. Track the remaining image work in OpenSpec task 4.5.
+
+These optional diagrams follow the class-03 suggestion format: source links, teaching placements, alternative text, and ready-to-use credits. No remote images are embedded and no image request is needed for notebook execution. Discussion replaces part of the existing explanation time; it adds no required activity or topic.
+
+Individual file pages, creators, and licenses were checked on **19 November 2026**. Wikimedia's general metadata/footer license is not the image's license. The candidates below have explicit Creative Commons licenses. They are suggestions, not local image assets: direct candidate downloads returned HTTP 429 during review, so no claim is made about inspecting their rendered legibility or their appearance in VS Code. Visually check a selected copy before including it in a teaching release.
+
+## Placement and purpose
+
+| Process and placement | Suggested image and creator | File license | Teaching use and limits |
+| --- | --- | --- | --- |
+| 04.1, after the frontend/backend request-flow explanation | [Client-server model](https://commons.wikimedia.org/wiki/File:Client-server_model.svg), **Lubaochuan** | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Trace a client request and server response. Identify the notebook/Requests client and supplied FastAPI backend. Explain that these roles can run on the same laptop: the diagram does not require two physical machines or an internet connection. |
+| 04.2, alongside request → status → JSON → validation | [HTTP response message format](https://commons.wikimedia.org/wiki/File:Prj5-responseHeader.png), **Satishgavali; response derivative by Frostyandy2k** | [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/) | Distinguish a response's status line, headers, and body before extracting JSON. This is an older HTTP/1-style message illustration, not a packet layout to implement or the wire representation of every HTTP version. Requests handles protocol framing; JSON is one possible body format and still needs schema validation. Prefer the notebook's own field table if the diagram's labels distract beginners. |
+| 04.4, before comparing the local-service and World Bank adapters; briefly revisit for the AI previews | [API in context](https://commons.wikimedia.org/wiki/File:20261024_API.svg), **RCraig09** | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | Connect a client application to capabilities exposed through an API. Locate the request/response boundary and then point to our external-to-internal mapping. Treat the API as an interface exposed by the service, not an extra physical machine every application needs. The provider's response contract still determines the mapping; the illustration does not imply that the World Bank and AI APIs share a JSON schema. |
+
+## Suggested alternative text and captions
+
+1. **Alternative text:** “A client initiates a request and receives a response from a server.” **Caption:** In this class, Requests is the client and FastAPI handles the request. Both can run locally; an API client does not have to be a browser.
+2. **Alternative text:** “An HTTP response is divided into a status line, header fields, and an optional message body.” **Caption:** Check HTTP status before decoding the body. Successful JSON decoding does not establish that the records satisfy the Observation schema. Explain these parts in text even when the picture is shown.
+3. **Alternative text:** “An application exchanges requests and results with a service through its API.” **Caption:** Keep the service's external representation at the adapter boundary. Our summary calculation continues to receive validated Observation objects.
+
+These are proposed descriptions to check against the selected rendered copy before embedding it. The existing notebook text/tables explain each point without relying on color, tiny labels, or an available image host.
+
+## Ready-to-use credits for unchanged copies
+
+- “[Client-server model](https://commons.wikimedia.org/wiki/File:Client-server_model.svg)” by Lubaochuan, via Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Unchanged copy.
+- “[HTTP response message format](https://commons.wikimedia.org/wiki/File:Prj5-responseHeader.png)” by Satishgavali, response derivative by Frostyandy2k, via Wikimedia Commons, [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/). Unchanged copy of the existing response derivative; the source page documents its alteration from the request-message illustration.
+- “[API in context](https://commons.wikimedia.org/wiki/File:20261024_API.svg)” by RCraig09, via Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Unchanged copy.
+
+If a later author crops, translates, recolors, or redraws a candidate, replace the unchanged-copy note with the actual changes and follow its attribution/ShareAlike terms. Keep the creator, original file-page link, and license beside the reused image or in clearly linked credits. The repository's software license does not replace these file licenses. Keep any downloaded transparent diagrams readable on a white display background, without silently changing their source artwork.
+
+## Selection notes
+
+Start with the client/server diagram. Add the API-context diagram only if students need help transferring that idea to another provider. The response-format illustration is optional support; the class does not teach raw HTTP framing. No stock image is needed for an authentication header, timeout, or validation error: the small real code and saved failure cases are more precise.
+
+MCP belongs after ordinary tool calling in class 05, as discussed in the course planning conversation. An MCP architecture diagram would introduce additional roles at the wrong point in class 04, so it is not included here.
+
+[Class index](README.md) · [Instructor notes](INSTRUCTOR.md)

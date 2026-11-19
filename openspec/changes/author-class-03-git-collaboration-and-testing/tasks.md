@@ -1,3 +1,7 @@
+# Execution status — 19 November 2026
+
+Implementation, automated/static checks, and the CC image-suggestion guide were published in `04bd438`. VS Code desktop task 3.6 remains open; hosted GitHub PR/authentication was not exercised by the author checks. See [project execution status](../../../PROJECT_STATUS.md) for the cross-course progress and legacy-content rule. Keep this change open until its pending desktop tasks pass.
+
 ## 1. Prepare the distribution and local practice
 
 - [x] 1.1 Add the index, 90/210-minute budget, workspace, and class-local dependency manifest/lockfile.

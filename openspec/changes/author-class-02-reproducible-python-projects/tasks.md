@@ -1,3 +1,7 @@
+# Execution status — 19 November 2026
+
+Implementation, automated/static checks, and local illustrations were published in `04bd438`. VS Code desktop task 3.6 remains open. See [project execution status](../../../PROJECT_STATUS.md) for the cross-course progress and legacy-content rule. Keep this change open until its pending desktop tasks pass.
+
 ## 1. Prepare the example and environment
 
 - [x] 1.1 Add the class-local manifest/lockfile, workspace, index, and 90/210-minute budget.
@@ -21,3 +25,8 @@
 - [x] 3.4 Render and inspect all five static previews; record verification and limitations in instructor notes.
 - [x] 3.5 Update course navigation and strictly validate the OpenSpec.
 - [ ] 3.6 Verify notebook rendering and solution interaction in VS Code desktop when UI access is available.
+
+## 4. Add process illustrations
+
+- [x] 4.1 Embed three local CC/CC0 illustrations with alternative text, teaching captions, source credits, and exact license/dedication links.
+- [x] 4.2 Add the image guide/index links and inspect all three updated notebook previews; preserve executable cells, exercise loaders, and workload allocations.

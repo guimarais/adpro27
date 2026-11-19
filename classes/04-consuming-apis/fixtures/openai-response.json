@@ -1,0 +1,7 @@
+{
+  "id": "resp_illustrative_not_a_live_capture",
+  "object": "response",
+  "status": "completed",
+  "model": "illustrative-model",
+  "output": [{"type": "message", "role": "assistant", "content": [{"type": "output_text", "text": "An HTTP API lets one program request data or actions from another using HTTP."}]}]
+}

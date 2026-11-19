@@ -1,3 +1,7 @@
+# Execution status — 19 November 2026
+
+Implementation and automated/static checks are complete; VS Code desktop task 5.6 remains open. The class was published in `11dc49e`; its local illustration update was published in `04bd438`. See [project execution status](../../../PROJECT_STATUS.md) for the cross-course progress and legacy-content rule. Keep this change open until its pending desktop tasks pass.
+
 ## 1. Establish the class distribution
 
 - [x] 1.1 Add the ordered reading index and authoritative 90/210-minute budget in the class README.
@@ -31,3 +35,8 @@
 - [x] 5.4 Render all five notebooks to static HTML and inspect exercise/required/optional presentation.
 - [x] 5.5 Record automated results, supported environment, and any unavailable desktop UI checks in the instructor notes.
 - [ ] 5.6 In VS Code desktop, verify Run All, visual exercise presentation, and reveal/inspect/execute behavior on a temporary copy. Pending if desktop UI access is unavailable.
+
+## 6. Add process illustrations
+
+- [x] 6.1 Embed three local CC/CC0 illustrations with alternative text, teaching captions, source credits, and exact license/dedication links.
+- [x] 6.2 Add the image guide/index links and inspect all three updated notebook previews; preserve executable cells, exercise loaders, and workload allocations.

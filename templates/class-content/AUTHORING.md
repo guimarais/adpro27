@@ -56,11 +56,15 @@ To verify a multipart class, pass its **directory** to the shared checker, for e
 uv run --project classes/01-oop-and-schemas --locked python templates/class-content/verify.py classes/01-oop-and-schemas
 ```
 
-The class owns its environment/lockfile and local fixtures, so students can download just that complete folder. The checker remains an instructor repository tool. Its default invocation checks the original template/specimen and the authored first class when present.
+The class owns its environment/lockfile and local fixtures, so students can download just that complete folder. The checker remains an instructor repository tool. Its default invocation checks the original template/specimen and discovers authored class directories `01` through `06` when present.
 
 [Class 02](../../classes/02-reproducible-python-projects/README.md) uses the same ordered format with an explicitly supplied local Python package. Its notebooks import their own names from those files rather than repeat application code or import another notebook. The checker discovers authored class directories by default and executes each reference as a module from its class root, preserving ordinary imports.
 
 [Class 03](../../classes/03-git-collaboration-and-testing/README.md) continues the format with Git basics first, followed by collaboration and pytest. Its default cells read recorded Git examples and keep writing commands as manual scratch-repository work. Independent time shifts to 60 minutes in part 4 and 75 in part 5 while preserving the 90/210 totals. The checker launches authored-class checks with each class's own `.venv` Python, so install each class with `uv sync --locked` before a full regression run. Its [image guide](../../classes/03-git-collaboration-and-testing/IMAGE_SUGGESTIONS.md) shows how to suggest process illustrations with file-specific CC credits, alternative text, and placement notes without adding an online execution dependency.
+
+Before choosing the next authoring task, consult [the execution tracker](../../PROJECT_STATUS.md). When adapting an older example, follow [the legacy-content rule](../../AGENTS.md): track only material actually reused, preferably as selected files in the active class folder with provenance. Update the relevant OpenSpec tasks and verification record after the work.
+
+[Class 04](../../classes/04-consuming-apis/README.md) keeps the five-part 90/210 format with the class-03 allocations. It introduces frontend/backend roles and a supplied FastAPI service, then a minimal Requests client, failures, public-data mapping, and short OpenAI/Ollama HTTP previews. Default notebook/reference execution uses saved responses; server/public/model calls require explicit commands. Pagination/retry algorithms and new server development are optional. Its instructor record distinguishes real localhost/public smoke tests, illustrative AI fixtures, and pending desktop checks.
 
 ## Weekly structure and timing
 

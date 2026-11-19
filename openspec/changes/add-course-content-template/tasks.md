@@ -1,3 +1,7 @@
+# Execution status — 19 November 2026
+
+Implementation and automated/static checks are complete; VS Code desktop tasks 5.4–5.5 remain open. The template/specimen was published in `11dc49e`; shared class-discovery/environment updates were published in `04bd438`. See [project execution status](../../../PROJECT_STATUS.md) for the cross-course progress and legacy-content rule. Keep this change open until its pending desktop tasks pass.
+
 ## 1. Establish the authoring layout
 
 - [x] 1.1 Add `templates/class-content/AUTHORING.md` with the notebook/Python/Markdown responsibilities and the six class-number/slug mappings.

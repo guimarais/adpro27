@@ -1,6 +1,6 @@
 # Advanced Programming for Data Science: course redesign
 
-Agreed curriculum, 18 November 2026. This document is the blueprint for authoring the teaching materials; the existing notebooks have not yet been rewritten.
+Agreed curriculum, 18 November 2026. This document is the curriculum blueprint; [PROJECT_STATUS.md](PROJECT_STATUS.md) records implementation progress, published work, verification evidence, and remaining tasks.
 
 ## Purpose and audience
 
@@ -41,7 +41,7 @@ By the end of the course, students should be able to:
 3. Organize Python modules, manage an isolated environment, declare dependencies, and recreate a project using uv and its lockfile.
 4. Use Git to inspect changes, make meaningful commits, work on a branch, and collaborate through a pull request.
 5. Write readable code and focused documentation; test normal and failure behavior using pytest and fixtures.
-6. Consume an HTTP API using parameters, JSON, authentication concepts, pagination, explicit timeouts, and controlled failure handling.
+6. Consume an HTTP API using parameters, JSON, authentication concepts, explicit timeouts, and controlled failure handling; recognize pagination and rate limits through optional enrichment.
 7. Build a small AI harness with permitted tools, validated arguments and results, execution limits, and a small evaluation set.
 8. Publish a usable data application with configuration, safe credential handling, useful logs, and automated checks.
 
@@ -64,7 +64,7 @@ Git instruction starts at the beginning of week 3. Weeks 1 and 2 use downloaded 
 
 Use one evolving **public-data explorer**, separate from the assessed project. It loads a small collection of records, validates them, produces a deterministic summary, acquires live data through an API, adds a small AI interface, and finally exposes a thin web UI.
 
-The authoring default is a domain-neutral record with an identifier, category, and numeric measurement. Select a suitable public dataset and key-free teaching API when preparing week 4, then document the mapping into that record. Keep domain analysis simple: the objective is programming rather than statistical modeling. Use saved responses to teach pagination or failures when the live API does not naturally provide them.
+The initial authoring default was a domain-neutral record with an identifier, category, and numeric measurement. The authored classes use the simpler Observation(label, value) model. Week 4 preserves that interface: the supplied local FastAPI service is the first hands-on endpoint, followed by key-free World Bank population data mapping ISO country/year into label and population into value. Keep domain analysis simple: the objective is programming rather than statistical modeling. Use saved responses for failures and optional pagination practice.
 
 Progress the example in small steps:
 
@@ -197,35 +197,39 @@ Tests should check behavior rather than reproduce implementation details. Use st
 
 ## Week 4: Consuming APIs
 
-**Question:** How do we acquire useful data when a remote service can fail or return unexpected content?
+Authored materials: [class 04 index and VS Code setup](classes/04-consuming-apis/README.md). Five ordered parts `04.1`–`04.5` introduce frontend/backend roles, a supplied FastAPI service, a small Requests client, explicit failures, a two-country World Bank mapping, and deterministic tests. Short OpenAI/Ollama HTTP demonstrations use illustrative saved envelopes by default; AI application building remains week 5. This scope reflects the approved simplification on 19 November 2026: pagination/retry implementation and new server development are optional.
 
-**Outcomes:** Explain a request/response exchange, send query parameters, check status, parse JSON, map it to an internal schema, and handle network and data failures without hiding them.
+**Question:** How does a client request useful data from a backend and recognize an unusable response?
+
+**Outcomes:** Explain frontend/backend/API roles and a request/response exchange; send a query parameter; check status; parse JSON; map it into the existing Observation(label, value) model; and handle network/data failures without hiding them. Recognize a JSON POST body and an authentication header through the AI previews.
 
 ### Ninety-minute class
 
 | Time | Activity |
 | --- | --- |
-| 0–20 | Explain HTTP at the client level; inspect a small GET request and JSON response |
-| 20–30 | Exercise: change a parameter and extract a useful field |
-| 30–50 | Write a small client function with an explicit timeout, status handling, and schema validation |
-| 50–60 | Exercise: diagnose a saved response with a missing field or unexpected status |
-| 60–80 | Introduce pagination, authentication headers, rate limits, and bounded retries of suitable read-only requests |
-| 80–90 | Exercise: complete a supplied two-page response traversal or classify failures as retryable/non-retryable |
+| 0–20 | Explain frontend/backend/API roles; inspect a supplied FastAPI route and a small GET/JSON response |
+| 20–30 | Exercise: change a query parameter and extract a useful field |
+| 30–50 | Write a small Requests client: explicit timeout, status check, JSON decode, and schema validation |
+| 50–60 | Exercise: return validated observations through a supplied offline response boundary |
+| 60–80 | Diagnose failures for ten minutes; preview OpenAI and Ollama HTTP requests for ten minutes |
+| 80–90 | Exercise: distinguish HTTP error, invalid JSON, and invalid record; explain actionable next steps |
 
 ### Independent work: 210 minutes
 
 | Minutes | Work |
 | --- | --- |
-| 45 | Read the chosen API's documentation and a short HTTP failure guide |
-| 60 | Integrate a live endpoint with the example's internal schema |
-| 75 | Use fixtures to handle a timeout, HTTP error, invalid JSON/record, and a pagination boundary |
-| 30 | Explain the authentication/configuration example and demonstrate an actionable error message |
+| 30 | Prepare the environment/kernel and verify the saved-data run |
+| 45 | Three 15-minute follow-ups on architecture, validation, and failure diagnosis |
+| 60 | Read minimal public-API documentation (20); map saved World Bank data and attempt explicit live integration when available (40) |
+| 75 | Write and challenge two failure tests (45); explain AI request/response contracts and complete handover checks (30) |
 
-**Completion evidence:** Validated records from an API, an explicit timeout, and deterministic tests of at least two failure behaviors.
+**Completion evidence:** A request with an explicit timeout, validated records, actionable failures, deterministic tests of at least two failure behaviors, and an explained external-to-internal mapping. Label saved versus live evidence. If the public service is unavailable, the saved integration is the documented recovery path.
 
-**Depth limit:** Use one synchronous HTTP client, Requests, for the required HTTP exercises. Requests documents parameters, status checking, exceptions, and explicit timeouts. Reuse a supplied bounded-retry helper instead of requiring a general retry framework. Teach authentication with a mock/example if the live teaching API is key-free. Do not require async programming, OAuth implementation, or API server development. [Requests quickstart](https://requests.readthedocs.io/en/latest/user/quickstart/).
+**Main example:** Consume the supplied FastAPI observations endpoint with Requests. The public-data example requests Portugal/Spain population for 2023 from the key-free World Bank Indicators API; map ISO/year into label and population in persons into value. Preserve the existing two-field Observation interface. Reject the entire load on invalid records; missing population is not zero. Keep real saved-response provenance and attribution. [World Bank API](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation).
 
-**Extension:** Build a small API endpoint, add a cache, or explore asynchronous requests.
+**Depth limit:** The required sequence is request → status → JSON → validation. Use one synchronous HTTP client, Requests. Supply the tiny FastAPI server; students need not build it. Make live server/public/model calls explicit, with offline notebook/reference defaults. OpenAI Responses and local Ollama generate illustrate POST/body/header differences; required completion needs neither credentials nor model installation. Use current official provider documentation when preparing live instructor access. No required async, OAuth, retries, pagination algorithm, or provider abstraction. [Requests](https://requests.readthedocs.io/en/latest/user/quickstart/), [FastAPI](https://fastapi.tiangolo.com/tutorial/first-steps/), [OpenAI Responses](https://developers.openai.com/api/reference/resources/responses/methods/create), [Ollama generate](https://docs.ollama.com/api/generate).
+
+**Optional extension:** Up to 180 minutes separately allocated to saved pagination, bounded retries/rate-limit guidance, a new FastAPI route, or a prepared live AI observation. Model installation/download time counts within optional work. Full AI application logic and the direct OpenAI SDK remain week 5.
 
 ## Week 5: Small AI applications
 
@@ -317,7 +321,7 @@ Use a small end-of-course handover exercise on the classroom example: a peer fol
 
 ## Existing materials: reuse and replacement map
 
-Paths below refer to materials present in this repository. Reuse concepts and examples after review; copying an existing notebook wholesale is not the migration strategy.
+Paths below refer to the local legacy inventory, which remains untracked and is excluded by the root ignore rules. Listing a file here does not authorize adding it to Git. Track legacy material only when actually reused in the redesigned course; prefer adapting the needed files into the active class folder and recording their provenance. See [the repository guidance](AGENTS.md).
 
 | Existing material | Destination | Authoring action |
 | --- | --- | --- |
@@ -330,7 +334,7 @@ Paths below refer to materials present in this repository. Reuse concepts and ex
 | [Error handling](Notebooks/02.3-ErrorHandling.ipynb), [handled function](Functions/my_function_handled.py) | Weeks 3–5 | Teach failures through tests, network boundaries, and invalid model output; prioritize actionable errors over broad exception swallowing |
 | [Version control](Notebooks/03-VersionControl.ipynb), [Git demo](git_demo/GitDemo.md) | Start of week 3 | Modernize the hands-on GitHub workflow; shorten theory, correct pull/recovery explanations, and replace hard-reset-centered beginner recovery |
 | [pytest](Notebooks/02.5-TestingWithPytest.ipynb), [test examples](Tests/test_my_first_function.py) | Week 3, reused in 4–6 | Add fixtures and behavior-focused failures; use normal imports; separate deliberately failing numerical examples from the working reference suite |
-| [File download](Examples/00-DownloadingAFile.ipynb), [download script](Examples/filedownload.py), [online reader](Functions/online_file_reader.py) | Week 4 | Reuse request/file-boundary ideas; add dedicated HTTP, status, pagination, timeout, authentication, schema, and fixture coverage |
+| [File download](Examples/00-DownloadingAFile.ipynb), [download script](Examples/filedownload.py), [online reader](Functions/online_file_reader.py) | Week 4 | Reuse request/file-boundary ideas; add dedicated HTTP, status, timeout, authentication, schema, and fixture coverage; pagination remains optional |
 | [Python and LLMs](Notebooks/04.1-Python+LLM.ipynb), [agents](Notebooks/04.2-Agents.ipynb) | Week 5 | Replace framework-first examples with visible direct SDK calls, schemas, a small tool dispatcher, bounded execution, and explicit evaluation |
 | [Local Ollama](Notebooks/04.3-Local_LLMs_with_Ollama.ipynb) | Week 5 extension | Update setup and verify the chosen model on CPU-only hardware; separate server/model installation from the Python client |
 | [Local RAG](Notebooks/04.3.1-RAG_ollama.ipynb), [OpenAI RAG](Notebooks/04.4-RAG_openai.ipynb), [smart dataframes](Notebooks/04.5-LLMs_Data_Analytics_SmartDataframes.ipynb) | Optional AI material | Retain for enrichment after checking current dependencies; remove from the required learning path |
@@ -340,9 +344,9 @@ Paths below refer to materials present in this repository. Reuse concepts and ex
 | [Past projects](Past_Editions/) | Instructor reference | Preserve as historical material; the instructor designs the new course project independently |
 | Deployment and CI | New week 6 material | Author a thin Streamlit example, hosting guide, server-side configuration notes, minimal workflow, and optional Podman guide |
 
-## Teaching materials to author next
+## Continuing implementation
 
-For each week, prepare a short concept notebook or reading, a 90-minute instructor agenda, three small class exercises, guided independent work totaling 210 minutes, a starter, and an explained reference solution. Mark optional extensions explicitly.
+Consult [the execution tracker](PROJECT_STATUS.md) to select the next unfinished block or verification task. For each new block, prepare ordered lessons, a 90-minute instructor agenda, three small class exercises, guided independent work totaling 210 minutes, a starter, and explained reference solutions. Mark optional extensions explicitly.
 
 The sample application can grow toward the following modest structure. Introduce files only when their purpose is taught; this is an authoring sketch, not an additional week 1 requirement.
 
@@ -376,9 +380,9 @@ Before releasing the revised teaching materials:
 5. Test the replay path without an API key or Ollama. Test any recommended Ollama model separately on representative CPU-only hardware.
 6. Verify the chosen Streamlit dependency route, GitHub authentication steps, offline CI, and a complete deployment without AI credentials.
 7. Trial the three ten-minute class exercises and the 210-minute independent tasks with a beginner; shorten required work if they overrun.
-8. Update navigation and assessment-topic references to match the six blocks. Preserve historical notebooks and project briefs as reference material.
+8. Update navigation and assessment-topic references to match the six blocks. Preserve historical notebooks and project briefs locally; track only material actually reused in the redesign.
 
-These are implementation checks for the forthcoming materials. This blueprint does not claim that those materials or infrastructure have already been built.
+These criteria apply as authoring and release work continues. Consult the execution tracker and each class's instructor notes for checks already performed and checks still pending; implementation does not by itself establish desktop or deployment verification.
 
 ## Technical references
 

@@ -1,0 +1,6 @@
+{
+  "model": "illustrative-model",
+  "response": "An HTTP API lets programs exchange requests and responses over HTTP.",
+  "done": true,
+  "done_reason": "stop"
+}

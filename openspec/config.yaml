@@ -3,6 +3,10 @@ schema: spec-driven
 context: |
   University course: Advanced Programming for Data Science.
   COURSE_REDESIGN.md is the agreed curriculum and workload blueprint.
+  PROJECT_STATUS.md tracks implementation, verification, publication, and next work.
+  AGENTS.md defines repository guidance, including the legacy-content rule.
+  Track legacy content only when actually reused in the redesigned course;
+  prefer adapting selected reused files into active class directories with provenance.
   Students enter with basic Python knowledge; the course has six weekly blocks.
   Each block includes 90 class minutes and 210 independent-work minutes.
   The separately designed course project is additional workload.
