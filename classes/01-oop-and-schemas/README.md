@@ -65,3 +65,7 @@ The [saved practice records](fixtures/observations.json) are included. [Instruct
 - A working validation/collection loop and meaningful checks of a small extension.
 
 AI coding assistance is permitted. You remain responsible for explaining, testing, and making a small change to your work.
+
+## Illustrations
+
+Three local Creative Commons illustrations are embedded at the relevant teaching points. Keep the `images/` folder with the notebooks. [Sources, credits, alternative text, and teaching notes](IMAGE_SUGGESTIONS.md) identify the exact license or CC0 dedication for each image.

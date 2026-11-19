@@ -9,6 +9,10 @@ context: |
   New classes use two-digit numbering 01 through 06.
   Class 01 has five ordered lesson parts 01.1 through 01.5, each fresh-kernel self-contained.
   Short teaching definitions may repeat within class-01 parts to avoid hidden notebook state.
+  Class 02 teaches reproducible modules/environments/uv/readability in ordered parts 02.1-02.5; Git starts in class 03.
+  Class 03 uses ordered parts 03.1-03.5 for Git basics, collaboration, pytest, fixtures, and review/conflict practice.
+  Class-03 notebook execution uses recorded Git examples; writing commands are manual scratch-repository work.
+  Suggested process images include file-specific Creative Commons credits and licenses.
   Classes are taken in VS Code desktop with Microsoft's Python and Jupyter extensions.
   Lesson notebooks guide learning; Python modules hold reusable code;
   Markdown holds navigation and setup. Solutions are revealed using IPython %load.

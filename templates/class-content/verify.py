@@ -140,13 +140,19 @@ def verify_class(directory):
         part_ids = {cell.metadata.exercise_id for cell in notebook.cells if "exercise" in cell.metadata.get("tags", [])}
         assert not exercises & part_ids, "Exercise IDs must be unique across parts"
         exercises.update(part_ids)
-    if number == "01":
+    if number in {"01", "02", "03"}:
         assert len(paths) == 5
-        assert [(int(row[1]), int(row[2])) for row in rows] == [(30, 15), (30, 15), (30, 15), (0, 45), (0, 90)]
-        assert exercises == {"01.1.E1", "01.2.E1", "01.3.E1", "01.4.H1", "01.5.H1", "01.5.H2", "01.5.H3"}
+        allocations = [(30, 15), (30, 15), (30, 15), (0, 45), (0, 90)]
+        if number == "03":
+            allocations = [(30, 15), (30, 15), (30, 15), (0, 60), (0, 75)]
+        assert [(int(row[1]), int(row[2])) for row in rows] == allocations
+        expected = {f"{number}.{i}.E1" for i in [1, 2, 3]} | {f"{number}.4.H1", f"{number}.5.H1", f"{number}.5.H2"}
+        if number == "01":
+            expected.add("01.5.H3")
+        assert exercises == expected
     for exercise_id in sorted(exercises):
         filename = "exercise_" + exercise_id.replace(".", "_").lower() + ".py"
-        subprocess.run([sys.executable, str(directory / "solutions" / filename)], cwd=directory, check=True)
+        subprocess.run([sys.executable, "-m", f"solutions.{Path(filename).stem}"], cwd=directory, check=True)
     for document in directory.glob("*.md"):
         check_links(document.read_text(), directory)
     print(f"PASS class {number}: ordered parts, 90/210-minute budget, unique IDs, independent references")
@@ -183,14 +189,24 @@ if __name__ == "__main__":
         ROOT / "NN-topic/NN-topic.ipynb",
         ROOT / "example/01-oop-and-schemas/01-oop-and-schemas.ipynb",
     ]
-    authored_class = ROOT.parents[1] / "classes/01-oop-and-schemas"
-    if len(sys.argv) == 1 and authored_class.exists():
-        paths.append(authored_class)
+    if len(sys.argv) == 1:
+        paths.extend(sorted((ROOT.parents[1] / "classes").glob("0[1-6]-*")))
     for path in paths:
         if path.is_dir():
+            # Each distribution owns its dependencies (class 03 adds pytest).
+            # Keep venv paths un-resolved: their executables may share a base symlink.
+            executable = path / ".venv" / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
+            assert executable.is_file(), f"Run uv sync --locked in {path}"
+            if executable.absolute() != Path(sys.executable).absolute():
+                subprocess.run([str(executable), str(Path(__file__).resolve()), str(path)], check=True)
+                continue
             verify_class(path)
             if path.name == "01-oop-and-schemas":
                 verify_load_payload(path, "exercise_01_1_e1.py", "left")
+            elif path.name == "02-reproducible-python-projects":
+                verify_load_payload(path, "exercise_02_1_e1.py", "module_result")
+            elif path.name == "03-git-collaboration-and-testing":
+                verify_load_payload(path, "exercise_03_1_e1.py", "reference_plan")
         else:
             verify(path)
     if len(sys.argv) == 1:

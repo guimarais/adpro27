@@ -58,6 +58,10 @@ uv run --project classes/01-oop-and-schemas --locked python templates/class-cont
 
 The class owns its environment/lockfile and local fixtures, so students can download just that complete folder. The checker remains an instructor repository tool. Its default invocation checks the original template/specimen and the authored first class when present.
 
+[Class 02](../../classes/02-reproducible-python-projects/README.md) uses the same ordered format with an explicitly supplied local Python package. Its notebooks import their own names from those files rather than repeat application code or import another notebook. The checker discovers authored class directories by default and executes each reference as a module from its class root, preserving ordinary imports.
+
+[Class 03](../../classes/03-git-collaboration-and-testing/README.md) continues the format with Git basics first, followed by collaboration and pytest. Its default cells read recorded Git examples and keep writing commands as manual scratch-repository work. Independent time shifts to 60 minutes in part 4 and 75 in part 5 while preserving the 90/210 totals. The checker launches authored-class checks with each class's own `.venv` Python, so install each class with `uv sync --locked` before a full regression run. Its [image guide](../../classes/03-git-collaboration-and-testing/IMAGE_SUGGESTIONS.md) shows how to suggest process illustrations with file-specific CC credits, alternative text, and placement notes without adding an online execution dependency.
+
 ## Weekly structure and timing
 
 Preserve purpose, outcomes, prerequisites, preparation, the class agenda, teaching/exercise cycles, guided independent work, completion checks/reflection, optional extensions, and references.

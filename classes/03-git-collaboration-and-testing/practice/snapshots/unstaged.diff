@@ -1,0 +1,10 @@
+diff --git a/README.md b/README.md
+index a7a7f9d..649a5f9 100644
+--- a/README.md
++++ b/README.md
+@@ -3,3 +3,5 @@
+ The mean of an empty collection is None.
+ 
+ Use this small folder as input for a separate practice repository outside the course checkout.
++
++Empty data means no measurements.

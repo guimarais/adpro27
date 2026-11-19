@@ -123,6 +123,8 @@ Authored materials: [class 01 index and VS Code setup](classes/01-oop-and-schema
 
 ## Week 2: Reproducible, maintainable Python projects
 
+Authored materials: [class 02 index and VS Code setup](classes/02-reproducible-python-projects/README.md). Its ordered `02.1`–`02.5` notebooks use a complete local Report package to teach modules, interpreter/environment identity, uv, readability, and reproducible handover. Each notebook imports its own explicit dependencies; Git instruction remains in class 03.
+
 **Question:** How does a script become a project that someone else can understand and run?
 
 **Outcomes:** Split code into modules, use normal imports, identify the active environment, distinguish pip installation from uv project management, explain the roles of `pyproject.toml` and `uv.lock`, and improve readability and run instructions.
@@ -158,6 +160,8 @@ The starter should not require Git operations in this block. If the installed uv
 **Extension:** Add a small command-line argument or explore package publication conceptually.
 
 ## Week 3: Git, collaboration, and testing
+
+Authored materials: [class 03 index and VS Code setup](classes/03-git-collaboration-and-testing/README.md). Five ordered parts `03.1`–`03.5` start with Git basics, continue into collaboration, then teach behavior tests, fixtures, and controlled inputs. The complete local package and recorded Git examples keep each notebook independent of earlier answers. [Creative Commons image suggestions](classes/03-git-collaboration-and-testing/IMAGE_SUGGESTIONS.md) include process placement, credits, and license links. An explicitly labeled offline review packet is available when GitHub access prevents the online activity.
 
 **Question:** How do we change a shared program while retaining evidence of what changed and whether it works?
 

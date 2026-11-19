@@ -1,0 +1,8 @@
+--- a/report_app/analysis.py
++++ b/report_app/analysis.py
+@@ -7,4 +7,4 @@
+     """Return count, total, and mean; an empty collection has mean None."""
+     count = len(records)
+     total = sum(record.value for record in records)
+-    return {"count": count, "total": total, "mean": total / count if count else None}
++    return {"count": count, "total": total, "mean": total / count if count else 0}

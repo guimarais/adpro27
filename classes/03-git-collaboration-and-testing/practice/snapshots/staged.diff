@@ -1,0 +1,10 @@
+diff --git a/summary.py b/summary.py
+index d667f45..5839bed 100644
+--- a/summary.py
++++ b/summary.py
+@@ -2,4 +2,4 @@
+ 
+ 
+ def mean(values):
+-    return sum(values) / len(values) if values else 0
++    return sum(values) / len(values) if values else None

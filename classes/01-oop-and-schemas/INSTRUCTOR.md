@@ -71,3 +71,9 @@ Verified on **18 November 2026** using Linux, Python 3.13.11, Pydantic 2.14.3, i
 **Pending desktop check:** the available UI tools do not expose VS Code desktop. On a temporary class copy, select the local `.venv`, restart/run each notebook, inspect the exercise cards, and reveal/execute a reference while preserving a student answer cell. Record the actual editor/extension versions and results when performed. Do not treat the static preview or protocol probe as that GUI result.
 
 The timings are allocations checked for consistency, not measurements from a student trial. Trial them with the cohort and adjust required content within the same budget.
+
+## Illustration update — 19 November 2026
+
+Three local diagrams now support the existing demonstrations; see [sources and teaching notes](IMAGE_SUGGESTIONS.md). Their captions distinguish the analogy from the actual Python behavior. Discuss them within the allocated teaching/reading time. PNG assets retain their source content, with white display backgrounds for transparent diagrams. Creator/license metadata and local image links were checked; the existing pending VS Code desktop verification still applies.
+
+The six updated notebook previews across classes 01 and 02 were rendered and inspected in the browser: all local images loaded, white display backgrounds were applied, and captions/credits were readable. Notebook schema, local links, image paths/dimensions, clean outputs/counts, and exact commented solution loaders passed static checks. No dependency or executable lesson-code changes were needed.
