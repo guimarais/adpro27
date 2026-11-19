@@ -157,6 +157,7 @@ The full package resolution is in the distributed lockfile.
   and mocked SDK transport is not live evidence. No optional Ollama model has passed
   CPU tool/schema tests, so no model is recommended. Windows/other-platform execution
   and beginner timing trials remain pending.
-- **Publication:** Class 05 exists in the working tree only. No Class 05 commit,
-  push, or publication has been performed. Earlier published baselines remain as
-  recorded in the project status.
+- **Publication:** Class 05 was committed as `568bcaa` and successfully pushed to
+  `origin/main` on **19 November 2026**, following the user's explicit request.
+  Publication does not complete the pending browser/desktop, live-model/demo,
+  optional CPU Ollama, platform, or beginner-timing checks.

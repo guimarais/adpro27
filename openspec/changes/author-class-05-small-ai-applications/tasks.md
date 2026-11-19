@@ -5,8 +5,10 @@ six independent references, %load protocol, offline execution, seeded regression
 fresh-copy locked recreation, HTML export/structural inspection, earlier-class
 regressions, lint/format, and strict OpenSpec checks pass. Actual browser visual
 review and VS Code desktop behavior remain pending, as do live instructor/model,
-optional CPU Ollama, platform/timing, and publication evidence. No Class 05 commit,
-push, or publication has occurred. See the class instructor record for limits.
+optional CPU Ollama, and platform/timing evidence. Class 05 was committed as
+`568bcaa` and successfully pushed to `origin/main` on **19 November 2026**, following
+an explicit user request. Publication does not complete pending delivery checks.
+See the class instructor record for limits.
 
 ## 1. Prepare the distribution
 
@@ -36,4 +38,4 @@ push, or publication has occurred. See the class instructor record for limits.
 - [ ] 4.1 Prepare and verify a live instructor demonstration or genuine recording; record exact model/date, compatibility, outcomes, access/cost/latency limits separately from replay/mocked SDK evidence.
 - [ ] 4.2 Before recommending an optional Ollama model, verify tool calling and structured output on representative CPU-only hardware, recording setup/download time and performance.
 - [ ] 4.3 Trial setup on supported platforms and teaching/exercise timing with a beginner; record actual results and shorten required scope if needed.
-- [ ] 4.4 Record publication only after an explicitly requested commit/push succeeds.
+- [x] 4.4 Record publication after the explicitly requested commit/push succeeded: `568bcaa`, pushed to `origin/main` on 19 November 2026.
