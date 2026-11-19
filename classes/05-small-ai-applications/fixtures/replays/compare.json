@@ -1,0 +1,68 @@
+{
+  "provenance": "Hand-authored illustrative Responses subsets; not live captures or model evaluations.",
+  "prompt": "Which has the larger population in the saved 2023 data: Portugal or Spain?",
+  "expected": "Use two exact lookups; report Spain larger with both correct values; stay within two tools/three requests.",
+  "steps": [
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "function_call",
+            "name": "find_observations",
+            "arguments": "{\"label\": \"PRT:2023\"}",
+            "call_id": "call_1"
+          }
+        ]
+      }
+    },
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "function_call",
+            "name": "find_observations",
+            "arguments": "{\"label\": \"ESP:2023\"}",
+            "call_id": "call_2"
+          }
+        ]
+      },
+      "expects": {
+        "call_id": "call_1",
+        "result": [
+          {
+            "label": "PRT:2023",
+            "value": 10578174.0
+          }
+        ]
+      }
+    },
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "message",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"answer\": \"Spain (48,352,528 persons) has a larger population than Portugal (10,578,174 persons), using the saved 2023 data.\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "expects": {
+        "call_id": "call_2",
+        "result": [
+          {
+            "label": "ESP:2023",
+            "value": 48352528.0
+          }
+        ]
+      }
+    }
+  ]
+}

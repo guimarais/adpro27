@@ -1,0 +1,23 @@
+{
+  "provenance": "Hand-authored illustrative Responses subsets; not live captures or model evaluations.",
+  "prompt": "Show a supplied refusal.",
+  "expected": "refused; no answer or tool execution.",
+  "steps": [
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "message",
+            "content": [
+              {
+                "type": "refusal",
+                "refusal": "Illustrative refusal."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

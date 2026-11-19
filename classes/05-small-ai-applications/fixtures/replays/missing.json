@@ -1,0 +1,41 @@
+{
+  "provenance": "Hand-authored illustrative Responses subsets; not live captures or model evaluations.",
+  "prompt": "What was France's population in the saved 2023 data?",
+  "expected": "An empty lookup is valid; explain absent data without inventing a population or using zero.",
+  "steps": [
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "function_call",
+            "name": "find_observations",
+            "arguments": "{\"label\": \"FRA:2023\"}",
+            "call_id": "call_1"
+          }
+        ]
+      }
+    },
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "message",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"answer\": \"France is absent from this saved snapshot. Its population is unknown here, not zero.\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "expects": {
+        "call_id": "call_1",
+        "result": []
+      }
+    }
+  ]
+}

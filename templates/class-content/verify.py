@@ -140,10 +140,10 @@ def verify_class(directory):
         part_ids = {cell.metadata.exercise_id for cell in notebook.cells if "exercise" in cell.metadata.get("tags", [])}
         assert not exercises & part_ids, "Exercise IDs must be unique across parts"
         exercises.update(part_ids)
-    if number in {"01", "02", "03", "04"}:
+    if number in {"01", "02", "03", "04", "05"}:
         assert len(paths) == 5
         allocations = [(30, 15), (30, 15), (30, 15), (0, 45), (0, 90)]
-        if number in {"03", "04"}:
+        if number in {"03", "04", "05"}:
             allocations = [(30, 15), (30, 15), (30, 15), (0, 60), (0, 75)]
         assert [(int(row[1]), int(row[2])) for row in rows] == allocations
         expected = {f"{number}.{i}.E1" for i in [1, 2, 3]} | {f"{number}.4.H1", f"{number}.5.H1", f"{number}.5.H2"}
@@ -209,6 +209,8 @@ if __name__ == "__main__":
                 verify_load_payload(path, "exercise_03_1_e1.py", "reference_plan")
             elif path.name == "04-consuming-apis":
                 verify_load_payload(path, "exercise_04_1_e1.py", "reference_rows")
+            elif path.name == "05-small-ai-applications":
+                verify_load_payload(path, "exercise_05_1_e1.py", "reference_answer")
         else:
             verify(path)
     if len(sys.argv) == 1:

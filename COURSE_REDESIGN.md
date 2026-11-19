@@ -233,44 +233,52 @@ Authored materials: [class 04 index and VS Code setup](classes/04-consuming-apis
 
 ## Week 5: Small AI applications
 
+Authored materials: [class 05 index, glossary, and VS Code setup](classes/05-small-ai-applications/README.md). Five self-contained parts, `05.1` through `05.5`, implement the approved interview: explicitly teach the vocabulary and supply the application, while student code changes remain **individual expressions or lines**. [PROJECT_STATUS.md](PROJECT_STATUS.md) records actual verification and delivery limits.
+
 **Question:** How do we make a model useful inside a program whose behavior we can still inspect and check?
 
-**Outcomes:** Make a model request or replay a saved response; define tool contracts; dispatch only permitted functions; validate arguments and final output; enforce a stopping condition; distinguish application tests from model evaluation.
+**Outcomes:** Explain model/prompt/context/token/SDK/tool/harness roles; inspect a structured answer; validate a proposed call; trace only permitted Python execution; recognize bounded stopping; distinguish deterministic application tests from model evaluation.
 
-The **harness** is the application's code around the model: request context, available tools, validation, tool execution, response handling, limits, and evidence about results. Teach that code explicitly.
+The **harness** is the application's code around the model: request context, available tools, validation, tool execution, response handling, limits, and evidence about results. Supply this code explicitly. Use a progressive [glossary](classes/05-small-ai-applications/GLOSSARY.md) with short definitions and examples; it is reference material within the workload.
 
 ### Ninety-minute class
 
 | Time | Activity |
 | --- | --- |
-| 0–20 | Make a direct OpenAI SDK request and parse a structured result using a schema |
-| 20–30 | Exercise: inspect the result and handle a supplied malformed, incomplete, or refused response |
-| 30–50 | Offer one or two read-only Python tools; inspect the proposed call, validate arguments, execute it, and return its result |
-| 50–60 | Exercise: complete a supplied dispatcher and reject an unknown tool or invalid argument |
-| 60–80 | Add the bounded loop, observable outcomes, and a small evaluation set; compare deterministic checks with live model quality |
-| 80–90 | Exercise: diagnose a saved tool-call trace and add a test for the call limit |
+| 0–20 | Explain the model/application boundary and initial vocabulary; show a direct OpenAI SDK structured-answer example with one Pydantic string field |
+| 20–30 | Exercise: complete the answer field name; distinguish invalid shape from a schema-valid false claim |
+| 30–50 | Inspect two supplied read-only tools, strict argument schemas, the allowlist dispatcher, call ID, and returned result |
+| 50–60 | Exercise: complete one dictionary-key expression; inspect supplied unknown-name and invalid-argument examples |
+| 60–80 | Trace the supplied bounded loop, named outcomes, and small evaluation set; distinguish requests from actual executions and tests from evaluation |
+| 80–90 | Exercise: complete the limit assertion literal; explain a blocked third tool proposal |
 
 ### Independent work: 210 minutes
 
 | Minutes | Work |
 | --- | --- |
-| 30 | Configure available OpenAI access or the replay path; read the optional local Ollama instructions |
-| 60 | Extend the supplied harness with a permitted data query or summary operation |
-| 60 | Test saved successful and failing tool calls, invalid output, and stopping conditions |
-| 45 | Evaluate five supplied prompts against explicit expected behavior; use live access when available and replay traces otherwise |
-| 15 | Explain one failure and whether the fix belongs in the schema, tool, prompt, or application logic |
+| 30 | Install/run the replay environment, select the VS Code kernel, and read the first glossary group |
+| 60 | Guided walkthrough and tiny completions: three 15-minute follow-ups plus 15 minutes tracing the supplied application in part 05.4 |
+| 60 | Run supplied tests and diagnose saved failures: 45 minutes in part 05.4 and 15 in part 05.5 |
+| 45 | Evaluate five supplied prompts against explicit expected behavior; label illustrative replay and any separate live evidence |
+| 15 | Explain one failure and whether its fix/check belongs in schema, tool, prompt, or application logic; complete the review |
 
-**Completion evidence:** An inspected execution trace, schema validation, bounded execution, deterministic orchestration tests, and a small table of expected versus observed results. Label replay results separately from live model results.
+Parts 05.1–05.3 each allocate 30 classroom/15 independent minutes; part 05.4 allocates 60 independent and part 05.5 75 independent. Preparation adds 30 independent. No new dispatcher, loop, tool, or test-suite implementation is required.
 
-**Main path:** Use direct OpenAI SDK calls. Function calling connects the model to application functions; structured outputs describe the response contract. Python structured-output examples can use Pydantic models. Handle refusal, incomplete output, and API errors explicitly; a valid schema does not establish factual correctness. [OpenAI function calling](https://developers.openai.com/api/docs/guides/function-calling), [structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs).
+**Completion evidence:** An inspected trace, one rejected input, final-answer schema validation, two execution limits, supplied deterministic checks, five expected/observed evaluation rows, and one short failure explanation. Replay demonstrates authored orchestration scenarios, not live model quality or the effect of a changed prompt.
 
-**No-payment path:** Supply recorded model responses and a small replay client behind the same model-call boundary. Required implementation and tests must work without a paid key. Include a live instructor demonstration or its recording. Offer institution-funded access if available; do not assume it exists. A replay demonstrates orchestration and debugging, not the student's live model performance.
+**Small familiar application:** Reuse the active class-04 World Bank snapshot through `Observation(label, value)`, with persons for `PRT:2023` and `ESP:2023`. Supply `get_summary()` and `find_observations(label)`. Preserve exact lookup and valid empty-list absence; missing is not zero. The final schema is only `Answer(answer: str)`. Check factual claims against actual deterministic tool results; a valid string can be false.
 
-**Optional Ollama path:** Supply separate setup instructions for the Ollama application/server, downloaded model, and Python dependency. Select a small model only after testing tool calling and structured output on representative CPU-only hardware. Verify their combination rather than assuming every model supports it; separate the tool-calling stage from the structured final-answer stage if necessary. Keep provider-specific calls visible and small. [Ollama Python prerequisites](https://github.com/ollama/ollama-python), [tool calling](https://docs.ollama.com/capabilities/tool-calling), [structured outputs](https://docs.ollama.com/capabilities/structured-outputs).
+**Main path:** Use direct OpenAI SDK Responses calls. The first standalone example demonstrates Pydantic parsing; the complete supplied harness uses a strict final-answer schema and shared explicit validation. A small callable replaces only the model-request boundary for replay. Python permits at most two tool executions and three model requests including final generation, processes one proposal at a time, and preserves call/result linkage. Stop the run on unknown tools, invalid arguments/output/response, refusal, incomplete output, API error, replay mismatch, or limits. Recovery is manual and SDK retries are disabled. [OpenAI function calling](https://developers.openai.com/api/docs/guides/function-calling), [structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=responses).
 
-**Depth limit:** One model, one or two read-only tools, and a supplied small call limit. Do not execute arbitrary code proposed by the model. Treat retrieved text as data, not authority to change the tool policy. Inspect the returned numbers against the deterministic tools. Do not require a framework, a universal provider abstraction, RAG, vector databases, or multi-agent orchestration.
+**No-payment path:** Untouched notebooks/references and default CLI commands use clearly labelled, hand-authored illustrative response subsets, not live captures. They read no credentials or live model settings. Live OpenAI requires an explicit command and configured key/model. Required completion never requires buying credits. Prepare a live instructor demonstration or genuine recording; keep its delivery check pending when unavailable. Offer institution-funded access if available. Check model/SDK compatibility separately from deterministic or mocked-transport checks.
 
-**Extension:** Run the same evaluation locally with Ollama, compare a prompt revision, or explore RAG using existing optional material. Local model installation/download time counts toward the extension budget.
+**Evaluation:** Supply Portugal lookup, two-country total, comparison, missing France, and attempted data modification prompts. Students compare expected and observed behavior manually, checking numbers, tool use, missing data, and read-only scope. Do not grade exact wording or claim replay measures prompt revisions. A provider refusal differs from a normal answer explaining read-only limits.
+
+**Optional Ollama path:** Keep separate instructions for the application/server, downloaded model, and Python dependency. Recommend a model only after CPU-only testing confirms tool calling and structured output, together or in separate stages if necessary. Keep provider-specific code visible. [Ollama Python prerequisites](https://github.com/ollama/ollama-python), [tool calling](https://docs.ollama.com/capabilities/tool-calling), [structured outputs](https://docs.ollama.com/capabilities/structured-outputs).
+
+**Depth limit:** One model, two read-only tools, and supplied limits. Python never executes arbitrary model-proposed code or grants permissions from tool-returned text. No required framework, provider hierarchy, RAG, vector database, multi-agent system, async, or UI.
+
+**Extensions:** At most 180 additional minutes combined: prompt revision with explicit live evidence up to 45, CPU Ollama exploration up to 120 including setup/download, and another saved-scenario inspection up to 15. Local setup stops at its budget; it is not required completion. The separately designed project remains additional workload.
 
 ## Week 6: Deployment and automated delivery
 

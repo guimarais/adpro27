@@ -1,0 +1,24 @@
+{
+  "provenance": "Hand-authored illustrative Responses subsets; not live captures or model evaluations.",
+  "prompt": "Explain in one sentence what a read-only data tool does.",
+  "expected": "One answer string, with no tool execution.",
+  "steps": [
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "message",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"answer\": \"A read-only tool returns data without changing it.\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

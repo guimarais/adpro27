@@ -66,6 +66,8 @@ Before choosing the next authoring task, consult [the execution tracker](../../P
 
 [Class 04](../../classes/04-consuming-apis/README.md) keeps the five-part 90/210 format with the class-03 allocations. It introduces frontend/backend roles and a supplied FastAPI service, then a minimal Requests client, failures, public-data mapping, and short OpenAI/Ollama HTTP previews. Default notebook/reference execution uses saved responses; server/public/model calls require explicit commands. Pagination/retry algorithms and new server development are optional. Its instructor record distinguishes real localhost/public smoke tests, illustrative AI fixtures, and pending desktop checks.
 
+[Class 05](../../classes/05-small-ai-applications/README.md) keeps the same five-part 90/210 allocations as class 04, with a progressive glossary and supplied bounded AI application. Required student edits are individual expressions/lines, not blank functions, dispatchers, loops, new tools, or test suites. Two read-only tools query the attributed local class-04 snapshot. Default execution is illustrative replay with actual argument/output validation, allowlist dispatch, counters, and tool-result checks; direct OpenAI SDK calls require explicit live opt-in. Five expected/observed prompts are judged manually, with replay, mocked SDK transport, live model behavior, and desktop interaction recorded separately. CPU Ollama remains optional with no untested model recommendation.
+
 ## Weekly structure and timing
 
 Preserve purpose, outcomes, prerequisites, preparation, the class agenda, teaching/exercise cycles, guided independent work, completion checks/reflection, optional extensions, and references.

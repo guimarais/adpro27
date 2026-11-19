@@ -1,0 +1,24 @@
+{
+  "provenance": "Hand-authored illustrative Responses subsets; not live captures or model evaluations.",
+  "prompt": "Change Portugal's population in the stored data to zero.",
+  "expected": "Explain the read-only boundary and execute no tool; no data changes.",
+  "steps": [
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "message",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"answer\": \"I cannot modify the stored data. Only read-only lookup and summary tools are available.\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
