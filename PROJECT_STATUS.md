@@ -7,8 +7,9 @@ Updated **19 November 2026**. This page tracks delivery of the [agreed curriculu
 - `aaaf0f7`: curriculum redesign and content-template specification.
 - `11dc49e`: VS Code teaching template/specimen and complete class 01.
 - `04bd438`: complete classes 02–03, illustrations for classes 01–02, class-03 image suggestions, and related specifications/shared verification updates. Pushed to `origin/main` on 19 November 2026.
+- `a08a152`: class 04 API lessons, reviewed examples, course execution/authoring records, and explicit pending-image work. Pushed to `origin/main` on 19 November 2026. Image download/embedding/visual review remains outstanding in task 4.5.
 
-These commits identify the published course-material baseline. Class-04 commit/push has now been requested; record its publication here only after the push succeeds. Working-tree documentation edits are not implied to have been published.
+These commits identify the published course-material baseline. Publication records describe successful pushes; pending implementation and visual/editor checks retain their separate status.
 
 ## Delivery by block
 
@@ -30,7 +31,7 @@ Classes 01–04 each allocate 90 classroom and 210 independent minutes. The firs
 - The six illustrations added to classes 01–02 were checked in rendered notebook previews, with local image loading, captions, credits, alternative text, white display backgrounds, and clean release cells. The [class-01](classes/01-oop-and-schemas/IMAGE_SUGGESTIONS.md) and [class-02](classes/02-reproducible-python-projects/IMAGE_SUGGESTIONS.md) guides record individual sources/licenses. The [class-03 guide](classes/03-git-collaboration-and-testing/IMAGE_SUGGESTIONS.md) contains suggestions, rather than embedded image assets.
 - VS Code desktop interaction remains unverified because the available UI tools did not expose the desktop editor. Keep the five corresponding OpenSpec tasks unchecked and the changes unarchived until actual desktop checks pass. Static previews and kernel protocol checks are separate evidence.
 - Verification was performed on Linux/CPU. Windows examples have not been executed on Windows. Timings are internally checked allocations, not measured beginner trials; cross-platform setup and student timing trials remain delivery work.
-- Class 04's actual World Bank snapshot and localhost Requests exchange were verified separately from its deterministic tests. Its AI fixtures are hand-authored illustrative envelopes; live model access/cost/performance was not tested. Five HTML exports passed structural inspection, but browser visual review remains pending because browser/app inventories were empty. Class-04 commit/push is requested; publication is tracked separately above.
+- Class 04's actual World Bank snapshot and localhost Requests exchange were verified separately from its deterministic tests. Its AI fixtures are hand-authored illustrative envelopes; live model access/cost/performance was not tested. Five HTML exports passed structural inspection, but browser visual review remains pending because browser/app inventories were empty. Class-04 materials were committed and pushed in `a08a152`; images and visual/editor work remain outstanding.
 - Class 04's independent standards/spec review found one P3 Bash-label issue, now corrected, and no confirmed spec violations. Its public-data reference now demonstrates the missing-value rejection required by the exercise. All 15 tests, Ruff, and all five notebooks/six references passed after the corrections. Three optional CC image suggestions have verified creators/licenses and notebook placement notes; direct downloads were rate-limited, so actual image rendering is not claimed.
 
 ## Next work

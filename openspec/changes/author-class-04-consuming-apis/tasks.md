@@ -1,6 +1,6 @@
 # Execution status — 19 November 2026
 
-Class-04 implementation, automated checks, real localhost/public smoke tests, and HTML export/structural inspection are complete. Commit and push have been requested; publication will be recorded after they succeed. Images remain pending: only source/license suggestions are complete; selected assets still need downloading, embedding, and visual review (task 4.5). Actual browser preview review and VS Code desktop interaction also remain pending. See the class instructor record for evidence and delivery limits.
+Class-04 implementation, automated checks, real localhost/public smoke tests, and HTML export/structural inspection are complete and were published in `a08a152`, pushed to `origin/main` on 19 November 2026. Images remain pending: only source/license suggestions are complete; selected assets still need downloading, embedding, and visual review (task 4.5). Actual browser preview review and VS Code desktop interaction also remain pending. See the class instructor record for evidence and delivery limits. Keep this change open until the pending tasks pass.
 
 ## 1. Prepare the distribution
 
