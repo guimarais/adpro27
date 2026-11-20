@@ -1,6 +1,6 @@
 # Execution status — 19 November 2026
 
-Class-04 implementation, automated checks, real localhost/public smoke tests, and HTML export/structural inspection are complete and were published in `a08a152`, pushed to `origin/main` on 19 November 2026. At that published baseline, images and browser preview review remained pending. The local 20 November follow-up completes tasks 4.5 and 3.4 with four bundled visuals and browser screenshots; actual VS Code desktop task 3.6 remains pending. The follow-up is unpublished. See the class instructor record for evidence and delivery limits. Keep this change open until the pending tasks pass.
+Class-04 implementation, automated checks, real localhost/public smoke tests, and HTML export/structural inspection are complete and were published in `a08a152`, pushed to `origin/main` on 19 November 2026. At that published baseline, images and browser preview review remained pending. The local 20 November follow-up completes tasks 4.5 and 3.4 with four bundled visuals and browser screenshots; actual VS Code desktop task 3.6 remains pending. Published in `705efd3`, pushed to `origin/main` on **20 November 2026** following the user's explicit commit/push request. See the class instructor record for evidence and delivery limits. Keep this change open until the pending tasks pass.
 
 ## 1. Prepare the distribution
 
@@ -38,3 +38,5 @@ Class-04 implementation, automated checks, real localhost/public smoke tests, an
 - [x] 6.1 Apply the agreed course consistency corrections and local CC/Mermaid teaching visuals; preserve the approved scope and workload.
 - [x] 6.2 Rerun shared fresh-kernel/reference/load/budget checks with real HTTP blocked, relevant existing suites and Ruff, plus image/link/release checks.
 - [x] 6.3 Export all parts and inspect actual browser image/caption/credit cells and each part's first exercise card; verify offline loading and page width. Record separate desktop, hosted, live-model, and timing limits in INSTRUCTOR.md.
+
+- [x] 6.4 Record actual publication after success: `705efd3`, pushed to `origin/main` on 20 November 2026; preserve all pending delivery checks.

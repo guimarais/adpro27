@@ -44,3 +44,5 @@ Implementation and automated/static checks are complete; VS Code desktop tasks 5
 
 - [x] 6.1 Clarify template/specimen versus class-local environments and each README's exact dev/no-dev setup command; document offline PNG/Mermaid authoring and licensing.
 - [x] 6.2 Recheck the template/specimen and all authored classes with the shared verifier and real HTTP blocked. Preserve the separate pending actual desktop/frontend tasks.
+
+- [x] 6.3 Record publication of the revised guidance/verifier in `705efd3`, pushed to `origin/main` on 20 November 2026.

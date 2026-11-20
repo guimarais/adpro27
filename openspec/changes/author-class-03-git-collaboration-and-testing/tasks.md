@@ -33,3 +33,5 @@ Implementation, automated/static checks, and the CC image-suggestion guide were 
 - [x] 6.1 Apply the agreed course consistency corrections and local CC/Mermaid teaching visuals; preserve the approved scope and workload.
 - [x] 6.2 Rerun shared fresh-kernel/reference/load/budget checks with real HTTP blocked, relevant existing suites and Ruff, plus image/link/release checks.
 - [x] 6.3 Export all parts and inspect actual browser image/caption/credit cells and each part's first exercise card; verify offline loading and page width. Record separate desktop, hosted, live-model, and timing limits in INSTRUCTOR.md.
+
+- [x] 6.4 Record actual publication after success: `705efd3`, pushed to `origin/main` on 20 November 2026; preserve all pending delivery checks.

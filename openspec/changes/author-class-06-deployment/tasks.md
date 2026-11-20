@@ -7,7 +7,7 @@ guarded fresh kernels/references, regression/recreation/no-dev checks, earlier
 class/template regressions, lint/format, static HTML structure, local app browser
 checks, and strict OpenSpec pass. Podman build/local execution passes on Linux.
 HTML browser visual task 3.7 is completed by the local course-wide follow-up below. VS Code, hosted deployment/CI/peer, optional live AI,
-platform/beginner trials, and publication retain separate pending evidence.
+platform/beginner trials retain separate pending evidence. Course-file publication succeeded in `705efd3` on 20 November 2026.
 See the class INSTRUCTOR.md for actual commands, environment, and limits.
 
 ## 1. Prepare the supplied distribution
@@ -39,7 +39,7 @@ See the class INSTRUCTOR.md for actual commands, environment, and limits.
 - [ ] 4.2 Verify any optional live model/private sharing/configuration separately, recording model/date/features/access/cost/latency limits; no replay/mock claim of live success.
 - [x] 4.3 Verify optional Podman build/local execution and record actual platform/VM conditions separately from public hosting: Linux/amd64, Podman 4.9.3, no VM setup tested; container UI behavior and loopback health pass.
 - [ ] 4.4 Trial supported-platform setup and required timings with a beginner; shorten scope if needed.
-- [ ] 4.5 Record publication only after an explicitly requested successful commit/push; local authoring is not publication.
+- [x] 4.5 Record publication after the explicit user request and successful commit/push: `705efd3`, pushed to `origin/main` on 20 November 2026. Hosted application/CI/peer delivery remains task 4.1.
 
 
 ## 6. Course-wide review follow-up — 20 November 2026
@@ -47,3 +47,5 @@ See the class INSTRUCTOR.md for actual commands, environment, and limits.
 - [x] 6.1 Apply the agreed course consistency corrections and local CC/Mermaid teaching visuals; preserve the approved scope and workload.
 - [x] 6.2 Rerun shared fresh-kernel/reference/load/budget checks with real HTTP blocked, relevant existing suites and Ruff, plus image/link/release checks.
 - [x] 6.3 Export all parts and inspect actual browser image/caption/credit cells and each part's first exercise card; verify offline loading and page width. Record separate desktop, hosted, live-model, and timing limits in INSTRUCTOR.md.
+
+- [x] 6.4 Record actual publication after success: `705efd3`, pushed to `origin/main` on 20 November 2026; preserve all pending delivery checks.

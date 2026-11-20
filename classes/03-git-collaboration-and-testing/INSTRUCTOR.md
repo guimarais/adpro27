@@ -100,4 +100,4 @@ for static HTML previews only.
 execute behavior. Browser screenshots and kernel protocol checks do not complete
 that task. Beginner timings, supported-platform trials, real hosted PR/deployment/
 CI/peer evidence, and live-model checks retain their existing separate status.
-These follow-up changes are local and unpublished.
+Published in `705efd3`, pushed to `origin/main` on **20 November 2026** following the user's explicit commit/push request. No public app deployment or new desktop/live-model/beginner trial is implied.
