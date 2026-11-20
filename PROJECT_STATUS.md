@@ -104,8 +104,8 @@ commit/push. Publication does not complete those pending delivery checks.
 
 Added a minimal [root README](README.md) linking to all six class guides. Static
 verification confirmed each guide exists and is linked once, in course order.
-This documentation change is local and unpublished; lesson execution and delivery
-evidence are unchanged.
+Published in `3b9173b`, pushed to `origin/main` on **20 November 2026** after the
+user requested commit/push. Lesson execution and delivery evidence are unchanged.
 
 ## Next work
 

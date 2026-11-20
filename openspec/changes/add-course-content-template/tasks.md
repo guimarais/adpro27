@@ -47,4 +47,4 @@ Implementation and automated/static checks are complete; VS Code desktop tasks 5
 
 - [x] 6.3 Record publication of the revised guidance/verifier in `705efd3`, pushed to `origin/main` on 20 November 2026.
 
-- [x] 6.4 Add a minimal root README linking to each of the six class guides; statically verify all six targets exist and appear once in course order. Local and unpublished; no new execution or delivery check claimed.
+- [x] 6.4 Add a minimal root README linking to each of the six class guides; statically verify all six targets exist and appear once in course order. Published in `3b9173b`, pushed to `origin/main` on 20 November 2026 after the user's explicit request; no new execution or delivery check claimed.
