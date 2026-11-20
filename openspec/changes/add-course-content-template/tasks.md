@@ -46,3 +46,5 @@ Implementation and automated/static checks are complete; VS Code desktop tasks 5
 - [x] 6.2 Recheck the template/specimen and all authored classes with the shared verifier and real HTTP blocked. Preserve the separate pending actual desktop/frontend tasks.
 
 - [x] 6.3 Record publication of the revised guidance/verifier in `705efd3`, pushed to `origin/main` on 20 November 2026.
+
+- [x] 6.4 Add a minimal root README linking to each of the six class guides; statically verify all six targets exist and appear once in course order. Local and unpublished; no new execution or delivery check claimed.

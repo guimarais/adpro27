@@ -100,6 +100,13 @@ distribution and course-wide follow-up were committed as `705efd3` and pushed
 to `origin/main` on **20 November 2026**, after the user explicitly requested
 commit/push. Publication does not complete those pending delivery checks.
 
+## Root navigation follow-up — 20 November 2026
+
+Added a minimal [root README](README.md) linking to all six class guides. Static
+verification confirmed each guide exists and is linked once, in course order.
+This documentation change is local and unpublished; lesson execution and delivery
+evidence are unchanged.
+
 ## Next work
 
 1. When desktop access is available, run the pending VS Code checks on temporary copies, preserving an answer-cell sentinel while revealing and separately executing a reference. Record actual editor/extension versions and results before completing those tasks.
