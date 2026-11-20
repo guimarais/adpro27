@@ -1,0 +1,20 @@
+{
+  "provenance": "Hand-authored illustrative Responses subsets; not live captures or model evaluations.",
+  "prompt": "Try invalid lookup arguments.",
+  "expected": "invalid_arguments; zero executions.",
+  "steps": [
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "function_call",
+            "name": "find_observations",
+            "arguments": "{\"label\": 123}",
+            "call_id": "call_1"
+          }
+        ]
+      }
+    }
+  ]
+}

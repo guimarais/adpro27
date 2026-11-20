@@ -1,0 +1,8 @@
+%% Original ADPRO course diagram, 2026. CC BY 4.0. See ../IMAGE_SUGGESTIONS.md.
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "DejaVu Sans, sans-serif", "fontSize": "19px", "primaryColor": "#e8f1fb", "primaryTextColor": "#10233f", "primaryBorderColor": "#355e85", "lineColor": "#43566e", "secondaryColor": "#e8f5ed", "tertiaryColor": "#fff3dd"}, "flowchart": {"htmlLabels": false, "nodeSpacing": 30, "rankSpacing": 40}, "sequence": {"actorFontSize": 18, "messageFontSize": 17, "noteFontSize": 17, "wrap": true}}}%%
+flowchart TB
+    C["Observation class<br/>label and value contract"] -->|"validates north, 2.5"| I["Observation instance<br/>label = north; value = 2.5"]
+    C -->|"model_json_schema"| S["JSON Schema<br/>rules for allowed records"]
+    I -->|"model_dump"| D["Python dictionary<br/>one record's data"]
+    I -->|"model_dump_json"| J["JSON text<br/>one record's data"]
+    J -->|"model_validate_json"| I

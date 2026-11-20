@@ -106,6 +106,27 @@ reveal/inspect/separately-execute/sentinel checklist on a temporary notebook.
 
 ## Verification record
 
+### Implementation recheck — 20 November 2026
+
+The implementation audit found no blocking gap against the approved scope.
+Using the existing class environment, all **32 tests**, Ruff lint and format
+checks, five fresh-kernel notebooks, and six independent references passed again.
+The shared verifier also passed the 90/210-minute budget, navigation/local links,
+workspace, exercise triples, clean release cells/commented loaders, and `%load`
+replacement/deferred/separate-execution protocol.
+
+Commands were `.venv/bin/python -m pytest -q`, `.venv/bin/ruff check report_app
+solutions tests`, `.venv/bin/ruff format --check report_app solutions tests`, and
+the shared verifier invoked with this class directory. Jupyter's local kernel
+sockets required execution outside the filesystem sandbox. The tests block real
+HTTP transport; the notebook rerun did not use the earlier external HTTP guard,
+so it adds no new guarded-offline evidence. Browser/VS Code, live-model/demo,
+optional CPU Ollama, platform, beginner-timing, and publication checks were not
+repeated or completed. Class 06 authoring can proceed with these delivery tasks
+still pending, as directed by the project tracker.
+
+### Original implementation verification — 19 November 2026
+
 Verified on **19 November 2026**, on Linux/CPU with Python 3.13.11, OpenAI SDK
 2.54.0, HTTPX 0.28.1, Pydantic 2.14.4, pytest 9.2.0, Ruff 0.17.6, IPython 9.18.1,
 ipykernel 7.4.0, nbformat 5.11.1, nbclient 0.11.0, and nbconvert 7.17.2.
@@ -161,3 +182,39 @@ The full package resolution is in the distributed lockfile.
   `origin/main` on **19 November 2026**, following the user's explicit request.
   Publication does not complete the pending browser/desktop, live-model/demo,
   optional CPU Ollama, platform, or beginner-timing checks.
+
+
+## Course-wide review follow-up — 20 November 2026
+
+**Implementation:** 5 local illustrations now support the existing material.
+See [sources, credits, licenses, and editable Mermaid diagrams](IMAGE_SUGGESTIONS.md).
+The course-wide changes correct prose/navigation/timing drift while preserving
+exercise IDs, answer/loader separation, standalone starts, and the 90/210 budget.
+
+**Difficult-topic cue:** Tool call/result linkage and request-versus-execution counts remain hard even with tiny edits. Use the numbered trace; the approved scaffolded build now includes a changed validated label with observed behavior in the existing follow-up.
+
+**Automated/static verification:** the template/specimen and all six authored
+classes pass the shared fresh-kernel/reference/navigation/release/workload and
+`%load` protocol checks, with Requests, HTTPX, and urllib real HTTP blocked.
+The existing class-02–06 suites total 100 passing tests; their Ruff lint/format
+checks pass. Local image paths, PNG signatures/dimensions, alt text, and embedded
+HTML exports pass across all 30 notebooks. No application runtime behavior was
+changed by this review.
+
+**Browser verification:** all five class exports load in local headless Chrome
+157.0.8103.78 with external HTTP requests blocked. All images load, no page-wide
+horizontal overflow was detected, and the actual image cells/captions/credits
+and first exercise card of each part were visually inspected in browser
+screenshots. The overly tall failure map was compacted and diagrams use their
+natural display size. Mermaid CLI 12.2.0 / Mermaid 12.3.0 produced the original
+PNGs. Authoring tools/previews live under `/tmp/adpro27-course-visuals`; they are
+not new student dependencies. This supersedes earlier local-file-policy limits
+for static HTML previews only.
+
+**Still pending:** actual VS Code desktop rendering and reveal/inspect/separately
+execute behavior. Browser screenshots and kernel protocol checks do not complete
+that task. Beginner timings, supported-platform trials, real hosted PR/deployment/
+CI/peer evidence, and live-model checks retain their existing separate status.
+These follow-up changes are local and unpublished.
+
+The outcome retains **build a small AI harness from supplied components**. Completion includes the one-line validated-label change and the successful/rejected-call evidence; no dispatcher/loop or new test-suite implementation is assigned.

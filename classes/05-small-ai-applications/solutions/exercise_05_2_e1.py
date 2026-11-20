@@ -9,6 +9,10 @@ validated = FindArguments(label="PRT:2023")
 function = allowed_tools[name]  # The missing expression is only name.
 reference_records = function(**validated.model_dump())
 assert reference_records == [{"label": "PRT:2023", "value": 10578174.0}]
+# Change just the validated input; reuse the selected permitted function.
+validated = FindArguments(label="FRA:2023")
+reference_missing = function(**validated.model_dump())
+assert reference_missing == []  # Absent data is not an invented zero.
 for bad_name, arguments, expected_error in [
     ("delete_data", "{}", KeyError),
     ("find_observations", '{"label":123}', ValidationError),

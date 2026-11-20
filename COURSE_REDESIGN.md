@@ -42,7 +42,7 @@ By the end of the course, students should be able to:
 4. Use Git to inspect changes, make meaningful commits, work on a branch, and collaborate through a pull request.
 5. Write readable code and focused documentation; test normal and failure behavior using pytest and fixtures.
 6. Consume an HTTP API using parameters, JSON, authentication concepts, explicit timeouts, and controlled failure handling; recognize pagination and rate limits through optional enrichment.
-7. Build a small AI harness with permitted tools, validated arguments and results, execution limits, and a small evaluation set.
+7. Build a small AI harness from supplied components, with permitted tools, validated arguments and results, execution limits, and a small evaluation set.
 8. Publish a usable data application with configuration, safe credential handling, useful logs, and automated checks.
 
 Successful completion means demonstrating these behaviors, not recalling a list of commands or library names.
@@ -101,7 +101,7 @@ Authored materials: [class 01 index and VS Code setup](classes/01-oop-and-schema
 | --- | --- |
 | 0–20 | Model one record collection: objects, attributes, methods, and construction |
 | 20–30 | Exercise: create two instances, change one, and explain why the other should remain unchanged |
-| 30–50 | Separate calculations from state; use composition; recognize inheritance through a small example |
+| 30–50 | Separate calculations from state and use composition; recognize inheritance in the guided independent follow-up |
 | 50–60 | Exercise: add a summary operation and explain whether it belongs in a function or a method |
 | 60–80 | Introduce type hints, Pydantic fields, constraints, and validation errors |
 | 80–90 | Exercise: validate a dictionary and identify which malformed records should be rejected |
@@ -187,7 +187,7 @@ Authored materials: [class 03 index and VS Code setup](classes/03-git-collaborat
 | 75 | Add normal and failure tests; use fixtures and a small parametrized example |
 | 30 | Diagnose a failing test and explain a small merge conflict using supplied examples |
 
-**Completion evidence:** A short Git history, a reviewed pull request, and tests that detect a deliberately introduced error.
+**Completion evidence:** A short Git history, an actual reviewed pull request, and tests that detect a deliberately introduced error. An offline review packet is provisional. Reserve the first 15 minutes of the 45-minute peer-review task for hosted PR publication/review or catch-up; when access is delayed, schedule those same reserved minutes later and keep online completion pending.
 
 **Depth limit:** Teach `.gitignore`, distinguish Git from GitHub, and track source and lockfiles rather than environments or credentials. Use a separate starter working directory for the Git exercises. Prioritize everyday collaboration over Git graph theory. Explain that `pull` fetches and integrates changes; it does not simply replace local code. Show safe recovery of a committed change with a prepared `revert` example. Do not make destructive reset commands part of the beginner recovery workflow.
 
@@ -264,7 +264,7 @@ The **harness** is the application's code around the model: request context, ava
 
 Parts 05.1–05.3 each allocate 30 classroom/15 independent minutes; part 05.4 allocates 60 independent and part 05.5 75 independent. Preparation adds 30 independent. No new dispatcher, loop, tool, or test-suite implementation is required.
 
-**Completion evidence:** An inspected trace, one rejected input, final-answer schema validation, two execution limits, supplied deterministic checks, five expected/observed evaluation rows, and one short failure explanation. Replay demonstrates authored orchestration scenarios, not live model quality or the effect of a changed prompt.
+**Completion evidence:** A connected permitted-function lookup, a one-line change of validated input with observed changed behavior, an inspected trace, one rejected input, final-answer schema validation, two execution limits, supplied deterministic checks, five expected/observed evaluation rows, and one short failure explanation. Replay demonstrates authored orchestration scenarios, not live model quality or the effect of a changed prompt.
 
 **Small familiar application:** Reuse the active class-04 World Bank snapshot through `Observation(label, value)`, with persons for `PRT:2023` and `ESP:2023`. Supply `get_summary()` and `find_observations(label)`. Preserve exact lookup and valid empty-list absence; missing is not zero. The final schema is only `Answer(answer: str)`. Check factual claims against actual deterministic tool results; a valid string can be false.
 
@@ -281,6 +281,16 @@ Parts 05.1–05.3 each allocate 30 classroom/15 independent minutes; part 05.4 a
 **Extensions:** At most 180 additional minutes combined: prompt revision with explicit live evidence up to 45, CPU Ollama exploration up to 120 including setup/download, and another saved-scenario inspection up to 15. Local setup stops at its budget; it is not required completion. The separately designed project remains additional workload.
 
 ## Week 6: Deployment and automated delivery
+
+Authored materials: [class 06 index and VS Code setup](classes/06-deployment/README.md).
+The approved interview retains tiny student edits and supplies the UI, workflow,
+tests, and configuration handling. Students copy the complete class contents into
+the root of their own separate GitHub repository, including hidden files, so the
+workflow and entrypoint have simple root paths. Five standalone ordered parts
+allocate 30 classroom/10 independent minutes each to 06.1–06.3, then 90 independent
+to 06.4 and 45 to 06.5. Preparation is 45 minutes; the agreed 90/210 and independent
+category totals below are preserved. Actual verification and hosted delivery
+limits are recorded in [PROJECT_STATUS.md](PROJECT_STATUS.md).
 
 **Question:** How does a working local program become an application another person can use?
 
@@ -304,7 +314,7 @@ Parts 05.1–05.3 each allocate 30 classroom/15 independent minutes; part 05.4 a
 | 45 | Prepare the hosting account, GitHub connection, and deployment checklist |
 | 60 | Complete the deployment and fix a supplied or encountered configuration/dependency issue |
 | 60 | Adapt the minimal workflow to run tests and formatting/lint checks on pushes and pull requests |
-| 30 | Improve logs and missing-configuration behavior; document local and hosted run instructions |
+| 30 | Inspect supplied logs and missing-configuration behavior; improve diagnostic documentation and local/hosted run instructions |
 | 15 | Ask a peer to open the public URL and follow the README; record the result |
 
 **Completion evidence:** A public URL that works without AI credentials, a readable README, useful diagnostic output, and a passing automated check for a subsequent change.
@@ -318,6 +328,28 @@ Parts 05.1–05.3 each allocate 30 classroom/15 independent minutes; part 05.4 a
 Explain that GitHub Pages serves static sites; it is not the runtime for this Python app. GitHub supplies the repository and automation, while Streamlit supplies application hosting. [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
 
 **Optional Podman extension:** Build an image from a short supplied Containerfile, run it, publish its port locally, and explain what the image packages. Distinguish this from publishing a public service. Podman installation uses a virtual machine on macOS/Windows, so prepare platform-specific instructions. Keep container-to-host Ollama networking outside the required exercise. [Podman installation](https://podman.io/docs/installation), [building images](https://docs.podman.io/en/latest/markdown/podman-build.1.html), [running containers](https://docs.podman.io/en/latest/markdown/podman-run.1.html).
+
+## Conceptual difficulty and visual scaffolding
+
+The six-block source review on 20 November 2026 identified the following likely
+beginner bottlenecks. These are teaching judgments, not measured student timings.
+Use the local illustrations within existing explanation/reading time; they add no
+required activity or minutes. Source/license records accompany each class.
+
+| Block | Main bottleneck | Teaching response |
+| --- | --- | --- |
+| 01 | State ownership; type hints versus validation/coercion; model/dictionary/JSON/schema | Predict which instance changes; follow the same record through each representation |
+| 02 | Imports and entrypoints; terminal interpreter versus notebook kernel; lock versus environment | Trace command → interpreter → packages and declaration → lock → recreation |
+| 03 | Working/index/local/remote states; fixtures and input replacement | Separate local staging from remote review; prepare scratch assets before the live exercise |
+| 04 | HTTP/JSON/schema/completeness are different checks; localhost/server lifetime | Trace failure exits and map external rows into the unchanged internal model |
+| 05 | Call/result linkage; requests versus executions; replay versus live evidence | Build from supplied components with a tiny input change; inspect a numbered bounded trace |
+| 06 | Local/GitHub/runner/host/browser are different locations | Trace the two independent paths from one push: checks and hosting updates |
+
+Weeks 3 and 5 are the largest conceptual load risks; week 6 has the greatest
+account/build/hosting uncertainty. Rehearse with beginners before changing depth
+or claiming that the allocated minutes are sufficient. Class 06 explicitly selects
+Python 3.13 even though earlier class manifests permit 3.11+; follow each class's
+own setup and verify the chosen runtime on supported student platforms.
 
 ## Completion checks and responsible AI use
 

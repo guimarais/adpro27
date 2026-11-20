@@ -24,6 +24,19 @@ The first three parts each contain 20 minutes of teaching/demo and a ten-minute 
 4. If it is missing, run `uv run --locked python -c "import sys; print(sys.executable)"`. Select that path through **Python: Select Interpreter → Enter interpreter path…**, then choose it separately in the notebook kernel picker. Check `sys.executable` in each notebook setup cell.
 5. Create a NEW scratch folder outside the course checkout and copy everything in [practice/git-starter](practice/git-starter/), including `.gitignore`, into it. All Git writing commands belong in that copy. Keep the supplied class source unchanged. Confirm GitHub/classroom access if available; [REVIEW_GUIDE.md](REVIEW_GUIDE.md) gives an explicit offline alternative for review practice.
 
+Before class, also prepare a separate complete application scratch copy outside the course checkout, excluding `.venv`, `.git`, and caches; run `uv sync --locked` in that copy. This preparation belongs to the same 30 minutes above and keeps copying/installing outside the ten-minute bug-fixing exercise. Keep the tiny Git starter and application copy separate. If installation exceeds preparation time, use an instructor-prepared copy and record the setup issue.
+
+After Git basics in 03.1, an existing instructor repository can instead be obtained with:
+
+```sh
+git clone <instructor-provided-course-repository-url> adpro-course
+cd adpro-course/classes/03-git-collaboration-and-testing
+```
+
+The URL is supplied by the instructor. Keep manual Git-writing exercises in the separate starter repository. Follow [the review guide](REVIEW_GUIDE.md) when choosing an existing classroom baseline versus your own new remote; do not combine unrelated histories.
+
+An offline review packet is **provisional**. Part 03.5.H1 reserves 15 of its 45 minutes for actual PR publication/peer review or catch-up, followed by 30 minutes for the supplied regression review. If access remains blocked, schedule those same reserved 15 minutes later with the instructor and leave hosted completion pending; this does not add a second task to the budget.
+
 Use **Restart Kernel → Run All** separately for each part. Each imports its own names and reads class-local files. After changing Python modules in a scratch copy, restart its notebook kernel to refresh imports. Default cells do not initialize repositories, change Git configuration, stage/commit/push, install packages, read credentials, or contact GitHub. Terminal commands are manual exercises; identify your working directory before running them.
 
 ## The runnable example
@@ -66,4 +79,9 @@ Expect **two failed assertions and exit code 1**. An import/collection error is 
 
 Exercises use IDs such as `03.1.E1` and `03.5.H1`. Each has a highlighted prompt, answer cell, and separate commented `%load solutions/...` cell. Attempt first. Uncomment the load line and run to reveal source; run the populated cell separately to execute it. Loading may replace its invoking cell, and a kernel restart does not remove loaded source. References never run Git mutations or installations; manual terminal steps stay comments.
 
-Completion evidence is a reviewed commit, an explained review comment, a test that detects wrong behavior, and an explained conflict resolution. You must be able to explain and modify AI-assisted work. See [review guidance](REVIEW_GUIDE.md), [Creative Commons image suggestions](IMAGE_SUGGESTIONS.md), and [instructor notes](INSTRUCTOR.md).
+Completion evidence is a coherent local commit, an actual hosted pull request with peer review, an explained review comment, a test that detects wrong behavior, and an explained conflict resolution. You must be able to explain and modify AI-assisted work. See [review guidance](REVIEW_GUIDE.md), [Creative Commons image suggestions](IMAGE_SUGGESTIONS.md), and [instructor notes](INSTRUCTOR.md).
+
+
+## Local illustrations
+
+4 local teaching visuals are embedded with captions, alternative text, and credits. Keep `images/` with the notebooks. [Sources, licenses, editable Mermaid files, and teaching notes](IMAGE_SUGGESTIONS.md). These explain existing material within the allocated time; no renderer or internet connection is needed to display them.

@@ -13,14 +13,15 @@ Use [the class index](README.md) and the five ordered notebooks. Begin with Git 
 | 60–80 | 03.3 pytest behavior/failures | Read the intended assertion failure, not a setup error |
 | 80–90 | 03.3.E1 | Detect the bug, correct a scratch copy, keep the expectations |
 
-Independent minutes: preparation 30 + Git follow-ups 30 = Git/setup 60; 03.5.H1 review 45; 03.3 follow-up 15 + 03.4 60 = testing 75; 03.5.H2 diagnosis/conflict 30. These total 210; checks and reflection are included. The separate project is additional workload. These are teaching estimates, not measured student completion times; trial with beginners and shorten if necessary.
+Independent minutes: preparation 30 + Git follow-ups 30 = Git/setup 60; 03.5.H1 review 45 (15 hosted PR/peer review or reserved catch-up + 30 regression review); 03.3 follow-up 15 + 03.4 60 = testing 75; 03.5.H2 diagnosis/conflict 30. These total 210; checks and reflection are included. The separate project is additional workload. These are teaching estimates, not measured student completion times; trial with beginners and shorten if necessary.
 
 ## Facilitation and boundaries
 
+- Prepare a complete external application scratch copy/environment during the existing 30-minute preparation, or supply one, before the ten-minute bug exercise. Keep it distinct from the tiny Git starter.
 - Have students copy the tiny Git starter into a new directory **outside** the actual course checkout, including `.gitignore`. Check their working directory before a writing command. Use repository-local identity configuration, named staging, and diff inspection.
 - The notebooks read recorded output. Default execution and reference scripts never initialize, stage, commit, push, change configuration, install packages, or read credentials. GitHub activity is an explicit manual exercise using authorized repositories.
 - Explain that `git diff` excludes untracked file contents and shows tracked unstaged edits; `git diff --staged` shows the proposed commit. Stage again if a subsequent edit should be included.
-- Use the guided online PR route when access permits. The [offline route](REVIEW_GUIDE.md) practices the same review reasoning but must not be presented as an actual pull request. If setup/authentication is incomplete, use that route during class rather than consuming the exercise with account setup.
+- Use the guided online PR route when access permits. The [offline route](REVIEW_GUIDE.md) practices the same review reasoning but must not be presented as an actual pull request. If setup/authentication is incomplete, use that route during class. It is provisional: reserve the first 15 minutes of 03.5.H1 for actual hosted publication/peer review, moving only those reserved minutes to a later supported access session if necessary. Keep online completion pending until PR/peer evidence exists.
 - For safe committed-change recovery, make an ordinary, disposable single-parent commit first, inspect it, then demonstrate `git revert --no-edit HEAD`. Revert records an inverse change and can conflict. Keep history-rewriting recovery outside this beginner block.
 - Default pytest discovery is restricted to `tests/`. Running the explicit broken practice target must yield two assertion failures, exit code 1. A collection/import error is a setup problem. Never require a failing release Run All to teach failures.
 - Show normal imports and fresh subprocess test runs. A monkeypatched reader still passes raw dictionaries through real schema validation. A fixture does not prove the behavior of a future live API.
@@ -66,3 +67,37 @@ Verified on **19 November 2026**, on Linux/CPU with Python 3.13.11, pytest 9.2.0
 - All five static HTML previews were visually inspected: exercise cards, timing, attempt/loader separation, code, and optional labels were readable. The three image suggestions' file-specific creators and CC licenses were checked against their source pages; illustrations remain optional links.
 
 **Pending:** actual VS Code desktop rendering and reveal/inspect/execute interaction. The available UI tools do not expose the desktop editor. On a temporary class copy, select its `.venv`, restart/run each notebook, preserve an answer-cell sentinel while revealing a reference, then run the revealed reference separately. Record editor/extension versions when that check is performed. Static HTML review and IPython replacement-payload checks do not establish the desktop GUI result.
+
+
+## Course-wide review follow-up — 20 November 2026
+
+**Implementation:** 4 local illustrations now support the existing material.
+See [sources, credits, licenses, and editable Mermaid diagrams](IMAGE_SUGGESTIONS.md).
+The course-wide changes correct prose/navigation/timing drift while preserving
+exercise IDs, answer/loader separation, standalone starts, and the 90/210 budget.
+
+**Difficult-topic cue:** Local/index/remote states and fixture replacement are the main risks. Teach local staging before remotes, prepare scratch assets before class, and keep the hosted review catch-up explicitly budgeted.
+
+**Automated/static verification:** the template/specimen and all six authored
+classes pass the shared fresh-kernel/reference/navigation/release/workload and
+`%load` protocol checks, with Requests, HTTPX, and urllib real HTTP blocked.
+The existing class-02–06 suites total 100 passing tests; their Ruff lint/format
+checks pass. Local image paths, PNG signatures/dimensions, alt text, and embedded
+HTML exports pass across all 30 notebooks. No application runtime behavior was
+changed by this review.
+
+**Browser verification:** all five class exports load in local headless Chrome
+157.0.8103.78 with external HTTP requests blocked. All images load, no page-wide
+horizontal overflow was detected, and the actual image cells/captions/credits
+and first exercise card of each part were visually inspected in browser
+screenshots. The overly tall failure map was compacted and diagrams use their
+natural display size. Mermaid CLI 12.2.0 / Mermaid 12.3.0 produced the original
+PNGs. Authoring tools/previews live under `/tmp/adpro27-course-visuals`; they are
+not new student dependencies. This supersedes earlier local-file-policy limits
+for static HTML previews only.
+
+**Still pending:** actual VS Code desktop rendering and reveal/inspect/separately
+execute behavior. Browser screenshots and kernel protocol checks do not complete
+that task. Beginner timings, supported-platform trials, real hosted PR/deployment/
+CI/peer evidence, and live-model checks retain their existing separate status.
+These follow-up changes are local and unpublished.

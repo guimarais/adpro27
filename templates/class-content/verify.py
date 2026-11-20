@@ -124,9 +124,10 @@ def verify_class(directory):
     rows = re.findall(r"^\| \[[^\]]+\]\(([^)]+\.ipynb)\) \| (\d+) \| (\d+) \|", index, re.M)
     assert [row[0] for row in rows] == [p.name for p in paths], "Index must list all parts once, in order"
     preparation = re.search(r"^\| Preparation and VS Code setup \| (\d+) \| (\d+) \|", index, re.M)
-    assert preparation and tuple(map(int, preparation.groups())) == (0, 30)
+    preparation_minutes = 45 if number == "06" else 30
+    assert preparation and tuple(map(int, preparation.groups())) == (0, preparation_minutes)
     assert sum(int(row[1]) for row in rows) == 90
-    assert 30 + sum(int(row[2]) for row in rows) == 210
+    assert preparation_minutes + sum(int(row[2]) for row in rows) == 210
     exercises = set()
     for position, (path, row) in enumerate(zip(paths, rows)):
         notebook = verify(path)
@@ -140,11 +141,13 @@ def verify_class(directory):
         part_ids = {cell.metadata.exercise_id for cell in notebook.cells if "exercise" in cell.metadata.get("tags", [])}
         assert not exercises & part_ids, "Exercise IDs must be unique across parts"
         exercises.update(part_ids)
-    if number in {"01", "02", "03", "04", "05"}:
+    if number in {"01", "02", "03", "04", "05", "06"}:
         assert len(paths) == 5
         allocations = [(30, 15), (30, 15), (30, 15), (0, 45), (0, 90)]
         if number in {"03", "04", "05"}:
             allocations = [(30, 15), (30, 15), (30, 15), (0, 60), (0, 75)]
+        if number == "06":
+            allocations = [(30, 10), (30, 10), (30, 10), (0, 90), (0, 45)]
         assert [(int(row[1]), int(row[2])) for row in rows] == allocations
         expected = {f"{number}.{i}.E1" for i in [1, 2, 3]} | {f"{number}.4.H1", f"{number}.5.H1", f"{number}.5.H2"}
         if number == "01":
@@ -211,6 +214,8 @@ if __name__ == "__main__":
                 verify_load_payload(path, "exercise_04_1_e1.py", "reference_rows")
             elif path.name == "05-small-ai-applications":
                 verify_load_payload(path, "exercise_05_1_e1.py", "reference_answer")
+            elif path.name == "06-deployment":
+                verify_load_payload(path, "exercise_06_1_e1.py", "reference_title")
         else:
             verify(path)
     if len(sys.argv) == 1:

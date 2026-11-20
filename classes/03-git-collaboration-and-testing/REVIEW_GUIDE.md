@@ -15,7 +15,7 @@ GitHub documents the current [create-PR flow](https://docs.github.com/en/pull-re
 
 ## Offline route: a review packet
 
-If access is unavailable during 03.2, include your branch diff (`git diff main...HEAD`) and commit summary (`git log --oneline main..HEAD`) in the written packet. For 03.5, use [the supplied patch](practice/review/change.patch). This is an **offline review packet**, not a published GitHub PR. Record the base behavior, proposed change, findings, test evidence, and recommendation. Exchange it with the assigned peer locally or through the normal course channel; if working alone, label the author response as simulated. Complete actual PR practice when access is available.
+If access is unavailable during 03.2, include your branch diff (`git diff main...HEAD`) and commit summary (`git log --oneline main..HEAD`) in the written packet. For 03.5, use [the supplied patch](practice/review/change.patch). This is an **offline review packet**, not a published GitHub PR. Record the base behavior, proposed change, findings, test evidence, and recommendation. Exchange it with the assigned peer locally or through the normal course channel; if working alone, label the author response as simulated. This packet gives provisional completion only. Use the first 15 minutes of 03.5.H1's existing 45-minute allocation to publish/review the actual PR, or inspect/respond to its review if already published. If access remains unavailable, do the 30-minute regression-review portion now, reserve the remaining 15 minutes for an instructor-arranged later access session, and keep hosted completion pending. Record the PR URL, source/base branches, and actual peer feedback; a simulated author response does not establish hosted peer review.
 
 ## What to review
 

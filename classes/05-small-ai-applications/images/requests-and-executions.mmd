@@ -1,0 +1,8 @@
+%% Original ADPRO course diagram, 2026. CC BY 4.0. See ../IMAGE_SUGGESTIONS.md.
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "DejaVu Sans, sans-serif", "fontSize": "19px", "primaryColor": "#e8f1fb", "primaryTextColor": "#10233f", "primaryBorderColor": "#355e85", "lineColor": "#43566e", "secondaryColor": "#e8f5ed", "tertiaryColor": "#fff3dd"}, "flowchart": {"htmlLabels": false, "nodeSpacing": 30, "rankSpacing": 40}, "sequence": {"actorFontSize": 18, "messageFontSize": 17, "noteFontSize": 17, "wrap": true}}}%%
+flowchart LR
+    R1["Request 1<br/>proposal 1"] --> T1["Execute tool 1"]
+    T1 --> R2["Request 2<br/>proposal 2"]
+    R2 --> T2["Execute tool 2"]
+    T2 --> R3["Request 3<br/>proposal 3"]
+    R3 --> X["STOP: tool_limit<br/>no execution 3"]

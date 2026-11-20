@@ -40,3 +40,10 @@ Implementation and automated/static checks are complete; VS Code desktop task 5.
 
 - [x] 6.1 Embed three local CC/CC0 illustrations with alternative text, teaching captions, source credits, and exact license/dedication links.
 - [x] 6.2 Add the image guide/index links and inspect all three updated notebook previews; preserve executable cells, exercise loaders, and workload allocations.
+
+
+## 6. Course-wide review follow-up — 20 November 2026
+
+- [x] 6.1 Apply the agreed course consistency corrections and local CC/Mermaid teaching visuals; preserve the approved scope and workload.
+- [x] 6.2 Rerun shared fresh-kernel/reference/load/budget checks with real HTTP blocked, relevant existing suites and Ruff, plus image/link/release checks.
+- [x] 6.3 Export all parts and inspect actual browser image/caption/credit cells and each part's first exercise card; verify offline loading and page width. Record separate desktop, hosted, live-model, and timing limits in INSTRUCTOR.md.

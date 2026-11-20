@@ -13,7 +13,8 @@
 # git push -u origin main
 # git push -u origin feature/summary-docs
 # Open a pull request in GitHub with base=main and compare=feature/summary-docs.
-# Without remote access, prepare an offline review packet instead; see REVIEW_GUIDE.md.
+# Without remote access, the offline packet is provisional; use the reserved
+# first 15 minutes of 03.5.H1 (or that same later access slot) for the actual PR/review.
 
 review_packet = {
     "problem": "Readers can confuse missing data with a measured zero.",

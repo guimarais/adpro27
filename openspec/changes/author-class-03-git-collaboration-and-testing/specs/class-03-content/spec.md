@@ -18,11 +18,12 @@ Part 03.1 SHALL introduce working tree, staging, local commits, status, unstaged
 
 ### Requirement: Branch and review workflow
 
-Part 03.2 SHALL explain branches, merge, remotes, fetch/push/pull, and a GitHub pull-request workflow. It SHALL explain that pull fetches and integrates changes, not simply overwrites working files. It SHALL supply a review guide and clearly label any offline review equivalent.
+Part 03.2 SHALL explain branches, merge, remotes, fetch/push/pull, and a GitHub pull-request workflow. It SHALL explain that pull fetches and integrates changes, not simply overwrites working files. It SHALL supply a review guide and clearly label the offline packet as provisional. Hosted completion SHALL require an actual reviewed pull request. The first 15 minutes of the existing 45-minute 03.5.H1 allocation SHALL be reserved for hosted PR/peer review or catch-up; delayed access SHALL move only those reserved minutes to a supported later session, leaving hosted completion pending.
 
 #### Scenario: Online review access is unavailable
 - **WHEN** a student uses the supplied review patch instead
-- **THEN** the activity is labelled an offline review packet and does not claim to have created or published a GitHub PR
+- **THEN** the activity is labelled a provisional offline review packet and does not claim to have created or published a GitHub PR
+- **AND** hosted completion remains pending until the reserved catch-up produces the actual PR and peer feedback
 
 ### Requirement: Safe default execution and recovery
 
@@ -81,3 +82,19 @@ Verification SHALL cover structure, budgets, paths, clean loaders, fresh noteboo
 #### Scenario: Actual VS Code editor cannot be controlled
 - **WHEN** only automated and static checks are possible
 - **THEN** those results are recorded without claiming that a desktop GUI test passed
+
+
+### Requirement: Offline teaching illustrations
+
+The approved course-wide review SHALL be reflected in local teaching illustrations
+(4 in this class), captions, meaningful alternative text, and source/license
+records. Reused images SHALL retain file-specific credits and licenses. Original
+course-specific diagrams SHALL retain editable Mermaid sources and CC BY 4.0
+credits, alongside local PNG renderings. Images SHALL explain existing concepts
+within the unchanged workload; their display SHALL NOT require network access or
+a student-installed renderer.
+
+#### Scenario: Student opens the complete class folder offline
+- **WHEN** a notebook displays a teaching illustration
+- **THEN** it reads the bundled PNG and supplies a textual explanation and credit
+- **AND** editable source and license information are available locally or through the source guide

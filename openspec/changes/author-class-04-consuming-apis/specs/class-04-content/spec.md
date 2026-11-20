@@ -64,3 +64,19 @@ Verification SHALL cover clean notebooks, paths, timing, fresh kernels, independ
 #### Scenario: Only kernel and static checks are available
 - **WHEN** verification is recorded
 - **THEN** those checks do not mark desktop reveal/rendering complete
+
+
+### Requirement: Offline teaching illustrations
+
+The approved course-wide review SHALL be reflected in local teaching illustrations
+(4 in this class), captions, meaningful alternative text, and source/license
+records. Reused images SHALL retain file-specific credits and licenses. Original
+course-specific diagrams SHALL retain editable Mermaid sources and CC BY 4.0
+credits, alongside local PNG renderings. Images SHALL explain existing concepts
+within the unchanged workload; their display SHALL NOT require network access or
+a student-installed renderer.
+
+#### Scenario: Student opens the complete class folder offline
+- **WHEN** a notebook displays a teaching illustration
+- **THEN** it reads the bundled PNG and supplies a textual explanation and credit
+- **AND** editable source and license information are available locally or through the source guide

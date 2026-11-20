@@ -79,3 +79,8 @@ uv run --locked ruff format --check report_app examples solutions tests
 ```
 
 The normal suite is offline. The route-function check is a direct Python call; real localhost HTTP is verified separately. Students write HTTP calls with Requests. Server construction and pagination/retry implementations remain optional.
+
+
+## Local illustrations
+
+4 local teaching visuals are embedded with captions, alternative text, and credits. Keep `images/` with the notebooks. [Sources, licenses, editable Mermaid files, and teaching notes](IMAGE_SUGGESTIONS.md). These explain existing material within the allocated time; no renderer or internet connection is needed to display them.

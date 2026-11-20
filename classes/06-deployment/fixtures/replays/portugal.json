@@ -1,0 +1,46 @@
+{
+  "provenance": "Hand-authored illustrative Responses subsets; not live captures or model evaluations.",
+  "prompt": "What was Portugal's population in the saved 2023 data?",
+  "expected": "Lookup PRT:2023; report 10,578,174 persons and the saved year.",
+  "steps": [
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "function_call",
+            "name": "find_observations",
+            "arguments": "{\"label\": \"PRT:2023\"}",
+            "call_id": "call_1"
+          }
+        ]
+      }
+    },
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "message",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"answer\": \"Portugal: 10,578,174 persons in the saved 2023 snapshot.\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "expects": {
+        "call_id": "call_1",
+        "result": [
+          {
+            "label": "PRT:2023",
+            "value": 10578174.0
+          }
+        ]
+      }
+    }
+  ]
+}

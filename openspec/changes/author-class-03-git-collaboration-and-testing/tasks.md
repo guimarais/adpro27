@@ -26,3 +26,10 @@ Implementation, automated/static checks, and the CC image-suggestion guide were 
 - [x] 3.4 Render/inspect all five static previews and verify image metadata against source pages.
 - [x] 3.5 Rerun earlier-class checks, link course navigation, record results, and strictly validate OpenSpec.
 - [ ] 3.6 Verify actual VS Code notebook rendering/reveal interaction when desktop UI access is available.
+
+
+## 6. Course-wide review follow-up — 20 November 2026
+
+- [x] 6.1 Apply the agreed course consistency corrections and local CC/Mermaid teaching visuals; preserve the approved scope and workload.
+- [x] 6.2 Rerun shared fresh-kernel/reference/load/budget checks with real HTTP blocked, relevant existing suites and Ruff, plus image/link/release checks.
+- [x] 6.3 Export all parts and inspect actual browser image/caption/credit cells and each part's first exercise card; verify offline loading and page width. Record separate desktop, hosted, live-model, and timing limits in INSTRUCTOR.md.

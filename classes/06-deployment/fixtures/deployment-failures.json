@@ -1,0 +1,34 @@
+[
+  {
+    "id": "entrypoint",
+    "stage": "Start application",
+    "log": "Error: Invalid value: File does not exist: app.py",
+    "cause": "The hosting entrypoint is app.py, but the supplied file is streamlit_app.py.",
+    "small_fix": "Select streamlit_app.py at the student repository root.",
+    "check": "Record the next build result and open the hosted URL; a saved log alone is not a deployment."
+  },
+  {
+    "id": "dependency",
+    "stage": "Install environment / import application",
+    "log": "ModuleNotFoundError: No module named 'pydantic'",
+    "cause": "The supplied manifest and uv.lock were not included beside the entrypoint.",
+    "small_fix": "Restore pyproject.toml and uv.lock together at the repository root; do not add a second dependency route.",
+    "check": "Inspect the dependency-install log, then run the app. If adding a real dependency later, use uv add and commit both files."
+  },
+  {
+    "id": "python",
+    "stage": "Install environment",
+    "log": "The requested interpreter resolved to Python 3.12, which is incompatible with requires-python >=3.13,<3.14",
+    "cause": "The hosting Python selection differs from the class's selected minor version.",
+    "small_fix": "Select Python 3.13 in hosting settings when creating the app; keep .python-version and pyproject.toml consistent.",
+    "check": "Confirm Python 3.13 in the new build log and rerun local locked checks."
+  },
+  {
+    "id": "workflow",
+    "stage": "Discover automated checks",
+    "log": "No workflow run appears for the pushed commit.",
+    "cause": "The workflow was left at classes/06-deployment/.github/workflows inside a fork of the course repository.",
+    "small_fix": "Use a separate student repository whose root contains the class contents, including .github/workflows/checks.yml.",
+    "check": "Open Actions for the exact next commit; record the run and its result, separately from hosting."
+  }
+]

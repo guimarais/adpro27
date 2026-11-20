@@ -1,0 +1,30 @@
+# This file belongs at .github/workflows/checks.yml in the STUDENT repository.
+# The course repository stores it inside the downloadable class folder.
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.9.25"
+      - name: Install selected Python
+        run: uv python install
+      - name: Install locked environment
+        run: uv sync --locked
+      - name: Tests without live services
+        run: uv run --locked python -m pytest -q
+      - name: Lint
+        run: uv run --locked ruff check streamlit_app.py report_app solutions tests
+      - name: Format
+        run: uv run --locked ruff format --check streamlit_app.py report_app solutions tests

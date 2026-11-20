@@ -47,7 +47,7 @@ This matches 60 minutes Git preparation/practice, 45 review, 75 testing, and 30 
 
 Use recorded status/diffs for default demonstrations. Students copy the small Git starter to a new folder outside the course checkout and configure identity locally. Teach inspect → stage explicit files → inspect staged diff → commit. Cover branches, local/remote distinction, fetch, push, fast-forward-only pull, and a GitHub PR guide. Use a prepared ordinary commit for revert and a local text conflict; avoid destructive reset instructions.
 
-GitHub account/network actions are manual. If access is unavailable during class, draft a clearly labelled review packet using the provided patch; perform real PR work when access is available. Do not describe the offline packet as a published PR. Automated validation uses only disposable local repositories and a local bare remote.
+GitHub account/network actions are manual. If access is unavailable during class, draft a clearly labelled review packet using the provided patch; reserve the first 15 minutes of 03.5.H1's 45 minutes for real hosted PR/peer review. If access remains blocked, schedule those same reserved minutes later and keep hosted completion pending; the remaining 30 minutes cover the supplied regression review. Do not describe the offline packet as a published PR. Automated validation uses only disposable local repositories and a local bare remote.
 
 ### Test behavior and the input boundary
 
@@ -57,7 +57,7 @@ Fixtures create fresh observations; parametrization covers several cases without
 
 ### Image suggestions
 
-Keep third-party candidates as source links and metadata in `IMAGE_SUGGESTIONS.md`, with placements in the notebook narrative. Verify the individual file's license, author, and credit; do not infer image rights from Commons' structured-data footer. Include useful cautions where an older diagram uses checkout/reset terminology, GitLab calls a review a merge request, or a testing diagram depicts broader TDD. No downloaded image or remote embed is required for default learning.
+Keep third-party candidate sources and metadata in `IMAGE_SUGGESTIONS.md`. The approved course-wide follow-up embeds the selected Git data-flow image and three original course-specific Mermaid diagrams as local PNGs, retaining editable sources for originals. Verify the individual file's license, author, and credit; do not infer image rights from Commons' structured-data footer. Include useful cautions where an older diagram uses checkout/reset terminology, GitLab calls a review a merge request, or a testing diagram depicts broader TDD. Download the complete images folder with the notebooks; local display requires no renderer or remote embed.
 
 ### Verification
 

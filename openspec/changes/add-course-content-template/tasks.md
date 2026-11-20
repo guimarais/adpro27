@@ -38,3 +38,9 @@ Implementation and automated/static checks are complete; VS Code desktop tasks 5
 - [ ] 5.4 On a temporary notebook copy, verify `%load` in VS Code's notebook editor: it reveals source separately from execution and preserves the student answer cell. Pending desktop UI access; kernel payload and installed extension handler checks are separate evidence.
 - [ ] 5.5 Visually inspect exercise highlights and required/optional labels in VS Code's notebook editor and a static preview; verify their meaning remains clear without color. Static preview already reviewed; VS Code GUI check pending.
 - [x] 5.6 Record the supported frontend, environment, commands, and results in the authoring guide; verify existing teaching materials are preserved.
+
+
+## 6. Course-wide review follow-up — 20 November 2026
+
+- [x] 6.1 Clarify template/specimen versus class-local environments and each README's exact dev/no-dev setup command; document offline PNG/Mermaid authoring and licensing.
+- [x] 6.2 Recheck the template/specimen and all authored classes with the shared verifier and real HTTP blocked. Preserve the separate pending actual desktop/frontend tasks.

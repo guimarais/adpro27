@@ -1,0 +1,7 @@
+%% Original ADPRO course diagram, 2026. CC BY 4.0. See ../IMAGE_SUGGESTIONS.md.
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "DejaVu Sans, sans-serif", "fontSize": "19px", "primaryColor": "#e8f1fb", "primaryTextColor": "#10233f", "primaryBorderColor": "#355e85", "lineColor": "#43566e", "secondaryColor": "#e8f5ed", "tertiaryColor": "#fff3dd"}, "flowchart": {"htmlLabels": false, "nodeSpacing": 30, "rankSpacing": 40}, "sequence": {"actorFontSize": 18, "messageFontSize": 17, "noteFontSize": 17, "wrap": true}}}%%
+flowchart LR
+    E["World Bank envelope<br/>metadata plus rows"] --> P["Check one-page metadata"]
+    P --> R["Validate PopulationRow<br/>country, year, value"]
+    R --> O["Observation<br/>PRT:2023; 10578174 persons"]
+    O --> S["Unchanged summarize<br/>count, total, mean"]

@@ -1,0 +1,9 @@
+%% Original ADPRO course diagram, 2026. CC BY 4.0. See ../IMAGE_SUGGESTIONS.md.
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "DejaVu Sans, sans-serif", "fontSize": "19px", "primaryColor": "#e8f1fb", "primaryTextColor": "#10233f", "primaryBorderColor": "#355e85", "lineColor": "#43566e", "secondaryColor": "#e8f5ed", "tertiaryColor": "#fff3dd"}, "flowchart": {"htmlLabels": false, "nodeSpacing": 30, "rankSpacing": 40}, "sequence": {"actorFontSize": 18, "messageFontSize": 17, "noteFontSize": 17, "wrap": true}}}%%
+flowchart LR
+    RUN["python -m report_app"] --> MAIN["__main__.py<br/>input and output"]
+    MAIN --> REPORT["report.py<br/>Report"]
+    MAIN --> MODEL["models.py<br/>Observation"]
+    REPORT --> MODEL
+    REPORT --> ANALYSIS["analysis.py<br/>summarize"]
+    ANALYSIS --> MODEL

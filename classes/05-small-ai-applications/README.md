@@ -1,6 +1,6 @@
 # Class 05 — Small AI applications
 
-Inspect a supplied AI application that can read two saved population observations.
+Build a small AI harness from supplied components that read two saved population observations.
 Understand what the model proposes and what Python controls. Complete only tiny
 expressions or single lines: the validation, SDK handling, tools, and loop are
 supplied. No paid key, GPU, local model, or answers from earlier classes are needed.
@@ -100,8 +100,9 @@ snapshot's separate terms are recorded in [fixtures/README.md](fixtures/README.m
 
 ## Completion and optional extensions
 
-Show one inspected trace, one rejected input, the two execution limits, passing
-supplied tests, a five-row expected/observed evaluation table with replay/live
+Show your connected permitted-function lookup, a one-line change from a present
+to an absent validated label with the observed changed result, one inspected
+trace, one rejected input, the two execution limits, passing supplied tests, a five-row expected/observed evaluation table with replay/live
 labels, and a short explanation assigning one fix to schema/tool/prompt/application
 logic. AI coding assistants may help; explain and modify the tiny lines yourself.
 
@@ -109,3 +110,8 @@ Optional, **180 minutes total maximum**: compare one prompt revision live (up to
 45), investigate CPU Ollama using the separate setup guide (up to 120 including
 downloads), or inspect one additional saved scenario (up to 15). Stop local setup
 at its time budget. Required completion remains available through replay.
+
+
+## Local illustrations
+
+5 local teaching visuals are embedded with captions, alternative text, and credits. Keep `images/` with the notebooks. [Sources, licenses, editable Mermaid files, and teaching notes](IMAGE_SUGGESTIONS.md). These explain existing material within the allocated time; no renderer or internet connection is needed to display them.

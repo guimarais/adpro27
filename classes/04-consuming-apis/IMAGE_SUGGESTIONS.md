@@ -1,10 +1,10 @@
 # Creative Commons image suggestions for class 04
 
-**Images pending:** the selected diagram assets have not yet been downloaded, embedded in the notebooks, or visually reviewed. Only source suggestions, license checks, and placement notes are complete. Track the remaining image work in OpenSpec task 4.5.
+**20 November update:** the client/server asset is now downloaded and embedded, together with three original Mermaid diagrams. The table below retains earlier candidates; the local inventory later in this file identifies the selected assets. Visual and automated results are recorded separately in INSTRUCTOR.md and OpenSpec task 4.5.
 
 These optional diagrams follow the class-03 suggestion format: source links, teaching placements, alternative text, and ready-to-use credits. No remote images are embedded and no image request is needed for notebook execution. Discussion replaces part of the existing explanation time; it adds no required activity or topic.
 
-Individual file pages, creators, and licenses were checked on **19 November 2026**. Wikimedia's general metadata/footer license is not the image's license. The candidates below have explicit Creative Commons licenses. They are suggestions, not local image assets: direct candidate downloads returned HTTP 429 during review, so no claim is made about inspecting their rendered legibility or their appearance in VS Code. Visually check a selected copy before including it in a teaching release.
+Individual file pages, creators, and licenses were checked on **19 November 2026**. Wikimedia's general metadata/footer license is not the image's license. The candidates below have explicit Creative Commons licenses. The original candidates were suggestions: direct downloads returned HTTP 429 on 19 November. The selected client/server download succeeded on 20 November; the other two candidates remain unembedded. No claim is made about their appearance in VS Code. Visually check a selected copy before including it in a teaching release.
 
 ## Placement and purpose
 
@@ -37,3 +37,23 @@ Start with the client/server diagram. Add the API-context diagram only if studen
 MCP belongs after ordinary tool calling in class 05, as discussed in the course planning conversation. An MCP architecture diagram would introduce additional roles at the wrong point in class 04, so it is not included here.
 
 [Class index](README.md) · [Instructor notes](INSTRUCTOR.md)
+
+
+## Local visual additions — 20 November 2026
+
+These visuals explain existing material inside its allocated reading/demo time. They add no required task or minutes. Each notebook includes a caption, meaningful alternative text, and a nearby credit. Local PNGs display offline without Mermaid support; `.mmd` files preserve editable sources.
+
+| Part | Local image | Teaching purpose | Source/license |
+| --- | --- | --- | --- |
+| 04.1 | [Identify roles before machines](images/client-server.png) | Requests is our client; FastAPI is the supplied server. They can run on the same laptop. The client initiates a request and receives a response; it need not be a browser. Keep the server terminal running while using the client terminal. | [Lubaochuan](https://commons.wikimedia.org/wiki/File:Client-server_model.svg); [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/); unchanged Commons rendering |
+| 04.2 | [A successful status is only one boundary](images/client-failure-boundaries.png) | First the request must return within its timeout; then check status, decode JSON, and validate records. Success at one stage does not imply success at the next. Keep failures distinct from a valid empty result. | Original; [Mermaid source](images/client-failure-boundaries.mmd); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 04.4 | [Keep provider details at the adapter](images/world-bank-mapping.png) | Map countryiso3code and date into the label and population into value, in persons. The summary still consumes Observation objects. Check expected identities separately: a shape-valid row does not establish completeness or truth. | Original; [Mermaid source](images/world-bank-mapping.mmd); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 04.5 | [Separate deterministic checks from service evidence](images/offline-and-live-evidence.png) | Known saved/fake responses test application behavior repeatably. A separate explicit smoke check tests service reachability and today's contract. Neither result silently substitutes for the other. | Original; [Mermaid source](images/offline-and-live-evidence.mmd); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+
+Original diagrams: ADPRO course contributors, 2026, released under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/), covering the Mermaid sources and their PNG renderings. They are newly authored diagrams of this course's code, not adaptations of the external illustrations. Keep this attribution and license link when reusing them, and identify later changes. External files retain their individual licenses; the repository's software license does not replace them.
+
+External creator/license/source pages were rechecked on 20 November 2026; Wikimedia's page-footer license is not the image license. Download URLs:
+
+- [Identify roles before machines: selected PNG](https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Client-server_model.svg/1280px-Client-server_model.svg.png)
+
+For future edits, render the corresponding `.mmd` with Mermaid CLI to the same PNG filename (white background, scale 2), then inspect the actual image and exported notebook before release. Rendering is author-only; students need no JavaScript packages. See the course authoring guide for the rendering command and verification distinctions.

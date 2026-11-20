@@ -1,0 +1,8 @@
+%% Original ADPRO course diagram, 2026. CC BY 4.0. See ../IMAGE_SUGGESTIONS.md.
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "DejaVu Sans, sans-serif", "fontSize": "19px", "primaryColor": "#e8f1fb", "primaryTextColor": "#10233f", "primaryBorderColor": "#355e85", "lineColor": "#43566e", "secondaryColor": "#e8f5ed", "tertiaryColor": "#fff3dd"}, "flowchart": {"htmlLabels": false, "nodeSpacing": 30, "rankSpacing": 40}, "sequence": {"actorFontSize": 18, "messageFontSize": 17, "noteFontSize": 17, "wrap": true}}}%%
+flowchart LR
+    M["Model or replay<br/>proposes data"] --> G["Python checks<br/>name and arguments"]
+    G -->|"permitted and valid"| T["Supplied read-only tool"]
+    G -->|"unknown or invalid"| STOP["Stop before execution"]
+    T --> R["Tool result<br/>returned to model"]
+    R --> A["Final answer<br/>validate shape; check facts"]

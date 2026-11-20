@@ -1,0 +1,27 @@
+[project]
+name = "adpro-class-06"
+version = "0.1.0"
+description = "A supplied data explorer for deployment and automated delivery practice"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "ipykernel>=6,<8",
+    "pydantic>=2,<3",
+    "openai>=2,<3",
+    "streamlit>=1.50,<2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "nbclient>=0.10,<1", "nbconvert>=7,<8", "ruff>=0.14,<1"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

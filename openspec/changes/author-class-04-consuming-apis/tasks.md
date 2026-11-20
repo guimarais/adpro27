@@ -1,6 +1,6 @@
 # Execution status — 19 November 2026
 
-Class-04 implementation, automated checks, real localhost/public smoke tests, and HTML export/structural inspection are complete and were published in `a08a152`, pushed to `origin/main` on 19 November 2026. Images remain pending: only source/license suggestions are complete; selected assets still need downloading, embedding, and visual review (task 4.5). Actual browser preview review and VS Code desktop interaction also remain pending. See the class instructor record for evidence and delivery limits. Keep this change open until the pending tasks pass.
+Class-04 implementation, automated checks, real localhost/public smoke tests, and HTML export/structural inspection are complete and were published in `a08a152`, pushed to `origin/main` on 19 November 2026. At that published baseline, images and browser preview review remained pending. The local 20 November follow-up completes tasks 4.5 and 3.4 with four bundled visuals and browser screenshots; actual VS Code desktop task 3.6 remains pending. The follow-up is unpublished. See the class instructor record for evidence and delivery limits. Keep this change open until the pending tasks pass.
 
 ## 1. Prepare the distribution
 
@@ -20,7 +20,7 @@ Class-04 implementation, automated checks, real localhost/public smoke tests, an
 - [x] 3.1 Extend shared class-04 checks and run fresh notebooks/references with clean release cells and outbound calls forbidden.
 - [x] 3.2 Run deterministic tests and lint/format checks; prove a seeded regression is detected in a temporary copy.
 - [x] 3.3 Verify real localhost HTTP, public integration, and fresh-copy locked environment recreation; record live-AI checks separately.
-- [ ] 3.4 Visually review all five static previews in a browser when available; export and structural HTML inspection passed, but no browser surface was available.
+- [x] 3.4 Visually review all five static previews: local headless Chrome loaded every image offline; image/caption/credit cells and each part's first exercise card were inspected in browser screenshots on 20 November. VS Code remains task 3.6.
 - [x] 3.5 Run earlier-class regression checks, update curriculum/status/navigation, and strictly validate OpenSpec.
 - [ ] 3.6 Verify actual VS Code desktop rendering and reveal/inspect/execute interaction when desktop access is available.
 
@@ -30,4 +30,11 @@ Class-04 implementation, automated checks, real localhost/public smoke tests, an
 - [x] 4.2 Correct the Bash prompt's portability label and complete the World Bank reference's requested missing-value example; independently confirm both corrections.
 - [x] 4.3 Add three source-verified Creative Commons diagram suggestions, proposed alternative text, credits, teaching caveats, and notebook placement notes, following class 03. Record asset-download/visual limits honestly.
 - [x] 4.4 Rerun class-04 tests, lint/format, standalone references, fresh notebook/load checks, and local-link checks; preserve pending browser/desktop tasks 3.4 and 3.6.
-- [ ] 4.5 Download, embed, and visually inspect the selected diagram images with source credits, licenses, and alternative text; verify local/offline display and preserve the existing workload and clean solution loaders. Source suggestions alone do not complete this task.
+- [x] 4.5 Download/embed/visually inspect the selected client-server CC image and three original Mermaid diagrams; source credits/licenses/alt text, local/offline browser display, 90/210 workload, and clean solution loaders passed on 20 November. Other original candidates remain suggestions.
+
+
+## 6. Course-wide review follow-up — 20 November 2026
+
+- [x] 6.1 Apply the agreed course consistency corrections and local CC/Mermaid teaching visuals; preserve the approved scope and workload.
+- [x] 6.2 Rerun shared fresh-kernel/reference/load/budget checks with real HTTP blocked, relevant existing suites and Ruff, plus image/link/release checks.
+- [x] 6.3 Export all parts and inspect actual browser image/caption/credit cells and each part's first exercise card; verify offline loading and page width. Record separate desktop, hosted, live-model, and timing limits in INSTRUCTOR.md.

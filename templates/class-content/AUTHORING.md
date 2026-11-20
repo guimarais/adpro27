@@ -70,6 +70,17 @@ Before choosing the next authoring task, consult [the execution tracker](../../P
 
 ## Weekly structure and timing
 
+[Class 06](../../classes/06-deployment/README.md) supplies a thin Streamlit app,
+saved data/replay, a root-layout student repository, one GitHub Actions job,
+deployment diagnostics, and optional private AI/Podman guides. Student edits
+remain small lines/settings. Its approved preparation is **45 minutes**, parts
+06.1–06.3 each allocate 30 classroom/10 independent, part 06.4 90 independent,
+and part 06.5 45 independent. These still total 90/210. Preserve this exception
+to the earlier classes' 30-minute preparation. The shared verifier checks it and
+the class-06 `%load` protocol. Untouched notebooks/references never start a server,
+run Git, or deploy. Local AppTest, browser review, VS Code interaction, actual
+hosted CI/deployment, and peer/platform evidence remain distinct checks.
+
 Preserve purpose, outcomes, prerequisites, preparation, the class agenda, teaching/exercise cycles, guided independent work, completion checks/reflection, optional extensions, and references.
 
 The class is three cycles of **20 minutes teaching/demo + 10 minutes exercise**: `0–20`, `20–30`, `30–50`, `50–60`, `60–80`, `80–90`. Use the class to introduce the initial portion of the block; guide students through the remaining material independently.
@@ -119,9 +130,9 @@ Relative paths are resolved from the **kernel working directory**. Open the supp
 
 ## Environment and verification
 
-Use **VS Code desktop** with Microsoft's **Python** and **Jupyter** extensions. The class workspace files recommend these extensions and point to the shared [uv environment](pyproject.toml). Runtime dependencies are `ipykernel` and Pydantic; standard notebook verification/export tools are in the development group. Install uv and use Python 3.11 or newer. The first dependency installation needs network access; notebook activities and checks then use local data. A browser notebook server is not part of the student workflow. [VS Code notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [kernel management](https://code.visualstudio.com/docs/datascience/jupyter-kernel-management).
+Use **VS Code desktop** with Microsoft's **Python** and **Jupyter** extensions. The template/specimen use the [template uv environment](pyproject.toml); authored class workspaces point to their own class-local `.venv`. The template runtime dependencies are `ipykernel` and Pydantic; standard notebook verification/export tools are in the development group. Install uv and use Python 3.11 or newer. The first dependency installation needs network access; notebook activities and checks then use local data. A browser notebook server is not part of the student workflow. [VS Code notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [kernel management](https://code.visualstudio.com/docs/datascience/jupyter-kernel-management).
 
-Students follow the numbered class README: run `uv sync --project <relative-project-path> --locked --no-dev`, open its `.code-workspace` through **File → Open Workspace from File…**, open the notebook, and select the shared `.venv` through **Select Kernel → Select Another Kernel… → Python Environments**. The first setup cell prints the interpreter path so they can confirm the selected environment.
+Students follow the numbered class README and its exact `uv sync` command (`--no-dev` only when the assigned work does not need development tools), open its `.code-workspace` through **File → Open Workspace from File…**, open the notebook, and select that class's `.venv` through **Select Kernel → Select Another Kernel… → Python Environments**. The first setup cell prints the interpreter path so they can confirm the selected environment.
 
 If VS Code does not list that environment, the README's `uv run ... python -c "import sys; print(sys.executable)"` command prints its exact interpreter path. Select it using **Python: Select Interpreter → Enter interpreter path…**, then select the same environment in the notebook kernel picker. Terminal interpreter selection and notebook kernel selection are separate. `python.defaultInterpreterPath` is an initial default; an existing selection can override it. [Interpreter setting](https://code.visualstudio.com/docs/python/settings-reference).
 
@@ -181,3 +192,34 @@ Environment and installed editor components inspected on **18 November 2026**, o
 - The lockfile was generated from the declared uv project. Existing teaching notebooks and historical project materials were preserved. The first package installation requires network access; the verified notebook activities use local files.
 
 Re-run automated checks after authoring or editing a class. Record the actual VS Code frontend result and extension versions when the pending GUI checks are performed.
+
+
+## Local teaching visuals — 20 November review
+
+Use a suitable existing Creative Commons illustration when it explains the actual
+concept. Where available candidates are too generic or introduce untaught roles,
+use an original course-specific Mermaid diagram. Keep the `.mmd` source, its
+CC BY 4.0 attribution, and a rendered local PNG in the class `images/` directory.
+The image guide and nearby notebook credit identify each file's own source/license;
+external adaptations retain their applicable attribution/ShareAlike requirements.
+Keep reused files unchanged unless an adaptation and its terms are recorded.
+
+Author-only rendering with Mermaid CLI (verified 12.2.0, Mermaid 12.3.0):
+
+```sh
+mmdc -i images/diagram.mmd -o images/diagram.png -b white -s 2
+```
+
+Use the actual source filename. Inspect the output and size the notebook image at
+its natural display width (PNG pixel width divided by scale, capped to the
+notebook width). A white display background keeps transparent external diagrams
+readable across themes. Preserve alt text, a teaching caption, and source/license
+credit. No student renderer, CDN script, or new notebook code cell is required.
+Discussion replaces part of existing explanation time, not an added assignment.
+
+Export with embedded images for an offline HTML preview. A local author-only
+browser can review these files when the in-app browser's file-URL policy rejects
+them. Record actual image loading, legibility, exercise cards, and clipping.
+Keep this evidence separate from VS Code desktop interaction and live delivery.
+The course-wide follow-up checked all six class exports this way; the template's
+own pending desktop/frontend tasks are not completed by those checks.

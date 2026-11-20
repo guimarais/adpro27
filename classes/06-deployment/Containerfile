@@ -1,0 +1,12 @@
+# Optional local packaging; build from the class/student repository root.
+FROM ghcr.io/astral-sh/uv:0.9.25 AS uv
+FROM python:3.13-slim
+COPY --from=uv /uv /usr/local/bin/uv
+WORKDIR /app
+COPY pyproject.toml uv.lock .python-version ./
+RUN uv sync --locked --no-dev
+COPY report_app ./report_app
+COPY fixtures ./fixtures
+COPY streamlit_app.py ./
+EXPOSE 8501
+CMD ["uv", "run", "--locked", "--no-dev", "streamlit", "run", "streamlit_app.py", "--server.address=0.0.0.0", "--server.headless=true", "--browser.gatherUsageStats=false"]

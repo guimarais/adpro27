@@ -1,0 +1,7 @@
+%% Original ADPRO course diagram, 2026. CC BY 4.0. See ../IMAGE_SUGGESTIONS.md.
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "DejaVu Sans, sans-serif", "fontSize": "19px", "primaryColor": "#e8f1fb", "primaryTextColor": "#10233f", "primaryBorderColor": "#355e85", "lineColor": "#43566e", "secondaryColor": "#e8f5ed", "tertiaryColor": "#fff3dd"}, "flowchart": {"htmlLabels": false, "nodeSpacing": 30, "rankSpacing": 40}, "sequence": {"actorFontSize": 18, "messageFontSize": 17, "noteFontSize": 17, "wrap": true}}}%%
+flowchart TB
+    T["Terminal<br/>uv run python"] --> P["Class .venv<br/>selected Python"]
+    K["Notebook kernel picker<br/>select class .venv"] --> P
+    P --> C["Class packages<br/>Pydantic and ipykernel"]
+    S["Scratch venv Python<br/>different path"] --> D["Scratch packages<br/>separate installation"]

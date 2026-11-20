@@ -64,3 +64,19 @@ Verification SHALL cover ordered navigation, workspace, budgets, IDs, links, fre
 #### Scenario: A fresh copy is prepared
 - **WHEN** the documented locked environment is recreated and the application is run
 - **THEN** its expected summary is produced without the original `.venv` or another notebook's state
+
+
+### Requirement: Offline teaching illustrations
+
+The approved course-wide review SHALL be reflected in local teaching illustrations
+(6 in this class), captions, meaningful alternative text, and source/license
+records. Reused images SHALL retain file-specific credits and licenses. Original
+course-specific diagrams SHALL retain editable Mermaid sources and CC BY 4.0
+credits, alongside local PNG renderings. Images SHALL explain existing concepts
+within the unchanged workload; their display SHALL NOT require network access or
+a student-installed renderer.
+
+#### Scenario: Student opens the complete class folder offline
+- **WHEN** a notebook displays a teaching illustration
+- **THEN** it reads the bundled PNG and supplies a textual explanation and credit
+- **AND** editable source and license information are available locally or through the source guide

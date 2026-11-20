@@ -85,3 +85,19 @@ Verification SHALL check ordered filenames/navigation, class workspace, aggregat
 #### Scenario: Actual desktop UI is unavailable
 - **WHEN** only headless kernel and source checks can be performed
 - **THEN** their results are recorded separately and the VS Code GUI checks remain pending
+
+
+### Requirement: Offline teaching illustrations
+
+The approved course-wide review SHALL be reflected in local teaching illustrations
+(6 in this class), captions, meaningful alternative text, and source/license
+records. Reused images SHALL retain file-specific credits and licenses. Original
+course-specific diagrams SHALL retain editable Mermaid sources and CC BY 4.0
+credits, alongside local PNG renderings. Images SHALL explain existing concepts
+within the unchanged workload; their display SHALL NOT require network access or
+a student-installed renderer.
+
+#### Scenario: Student opens the complete class folder offline
+- **WHEN** a notebook displays a teaching illustration
+- **THEN** it reads the bundled PNG and supplies a textual explanation and credit
+- **AND** editable source and license information are available locally or through the source guide

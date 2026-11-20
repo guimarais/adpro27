@@ -1,6 +1,6 @@
 # Creative Commons illustrations for class 02
 
-Three illustrations are included as local PNGs in the lesson notebooks, with alternative text, short teaching captions, and nearby credits. Download the complete class folder, including `images/`, to keep them available offline. No network request or extra code cell is needed to display them. Their discussion fits inside the existing reading/demo time; the workload and exercises are unchanged.
+Six illustrations are included as local PNGs (three reused illustrations and three original Mermaid diagrams) in the lesson notebooks, with alternative text, short teaching captions, and nearby credits. Download the complete class folder, including `images/`, to keep them available offline. No network request or extra code cell is needed to display them. Their discussion fits inside the existing reading/demo time; the workload and exercises are unchanged.
 
 Creators and individual licenses were checked against the linked sources on **19 November 2026**. Wikimedia's general metadata/footer license is not the image license. Where a work offers several licenses, the CC option below is the one used for this copy. CC0 is a public-domain dedication, distinguished from attribution licenses.
 
@@ -47,3 +47,19 @@ Keep the source, creator, and license links with reused illustrations. If you cr
 Transparent diagrams are displayed on a white background so their black text/arrows remain readable across editor themes; the image files themselves are unchanged. The adjacent text explains the teaching point without relying on color or on reading every label in the picture. The numbered notebook sequence, exercise IDs, and commented `%load` solution cells are preserved.
 
 [Class index](README.md) · [Instructor notes](INSTRUCTOR.md)
+
+
+## Local visual additions — 20 November 2026
+
+These visuals explain existing material inside its allocated reading/demo time. They add no required task or minutes. Each notebook includes a caption, meaningful alternative text, and a nearby credit. Local PNGs display offline without Mermaid support; `.mmd` files preserve editable sources.
+
+| Part | Local image | Teaching purpose | Source/license |
+| --- | --- | --- | --- |
+| 02.1 | [Read the actual package map](images/package-map.png) | Read arrows as imports/uses. Running python -m report_app enters __main__.py; importing report_app.report does not run that entrypoint. Work from the documented class root. | Original; [Mermaid source](images/package-map.mmd); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 02.2 | [Trace the interpreter before installing](images/environment-identity.png) | The terminal command and notebook kernel can select the same class environment, but they are separate selections. The scratch venv has its own packages. Use python -m pip only where that selected interpreter has pip installed. | Original; [Mermaid source](images/environment-identity.mmd); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 02.3 | [Three responsibilities, one workflow](images/declaration-lock-environment.png) | pyproject.toml declares allowed dependencies; uv.lock records a resolved set; uv sync --locked recreates the environment from the supplied resolution. Neither file freezes external data or model answers. | Original; [Mermaid source](images/declaration-lock-environment.mmd); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+
+Original diagrams: ADPRO course contributors, 2026, released under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/), covering the Mermaid sources and their PNG renderings. They are newly authored diagrams of this course's code, not adaptations of the external illustrations. Keep this attribution and license link when reusing them, and identify later changes. External files retain their individual licenses; the repository's software license does not replace them.
+
+
+For future edits, render the corresponding `.mmd` with Mermaid CLI to the same PNG filename (white background, scale 2), then inspect the actual image and exported notebook before release. Rendering is author-only; students need no JavaScript packages. See the course authoring guide for the rendering command and verification distinctions.

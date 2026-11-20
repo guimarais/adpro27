@@ -77,3 +77,37 @@ The timings are allocations checked for consistency, not measurements from a stu
 Three local diagrams now support the existing demonstrations; see [sources and teaching notes](IMAGE_SUGGESTIONS.md). Their captions distinguish the analogy from the actual Python behavior. Discuss them within the allocated teaching/reading time. PNG assets retain their source content, with white display backgrounds for transparent diagrams. Creator/license metadata and local image links were checked; the existing pending VS Code desktop verification still applies.
 
 The six updated notebook previews across classes 01 and 02 were rendered and inspected in the browser: all local images loaded, white display backgrounds were applied, and captions/credits were readable. Notebook schema, local links, image paths/dimensions, clean outputs/counts, and exact commented solution loaders passed static checks. No dependency or executable lesson-code changes were needed.
+
+
+## Course-wide review follow-up — 20 November 2026
+
+**Implementation:** 6 local illustrations now support the existing material.
+See [sources, credits, licenses, and editable Mermaid diagrams](IMAGE_SUGGESTIONS.md).
+The course-wide changes correct prose/navigation/timing drift while preserving
+exercise IDs, answer/loader separation, standalone starts, and the 90/210 budget.
+
+**Difficult-topic cue:** State ownership and the distinction between type hints, coercion, validation, instance JSON, and JSON Schema are the main conceptual risks. Ask students to predict each change/result before running it.
+
+**Automated/static verification:** the template/specimen and all six authored
+classes pass the shared fresh-kernel/reference/navigation/release/workload and
+`%load` protocol checks, with Requests, HTTPX, and urllib real HTTP blocked.
+The existing class-02–06 suites total 100 passing tests; their Ruff lint/format
+checks pass. Local image paths, PNG signatures/dimensions, alt text, and embedded
+HTML exports pass across all 30 notebooks. No application runtime behavior was
+changed by this review.
+
+**Browser verification:** all five class exports load in local headless Chrome
+157.0.8103.78 with external HTTP requests blocked. All images load, no page-wide
+horizontal overflow was detected, and the actual image cells/captions/credits
+and first exercise card of each part were visually inspected in browser
+screenshots. The overly tall failure map was compacted and diagrams use their
+natural display size. Mermaid CLI 12.2.0 / Mermaid 12.3.0 produced the original
+PNGs. Authoring tools/previews live under `/tmp/adpro27-course-visuals`; they are
+not new student dependencies. This supersedes earlier local-file-policy limits
+for static HTML previews only.
+
+**Still pending:** actual VS Code desktop rendering and reveal/inspect/separately
+execute behavior. Browser screenshots and kernel protocol checks do not complete
+that task. Beginner timings, supported-platform trials, real hosted PR/deployment/
+CI/peer evidence, and live-model checks retain their existing separate status.
+These follow-up changes are local and unpublished.

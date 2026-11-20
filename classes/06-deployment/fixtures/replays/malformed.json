@@ -1,0 +1,23 @@
+{
+  "provenance": "Hand-authored illustrative Responses subsets; not live captures or model evaluations.",
+  "prompt": "Return a malformed final answer.",
+  "expected": "invalid_output; answer must be a string.",
+  "steps": [
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "message",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"answer\": 123}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

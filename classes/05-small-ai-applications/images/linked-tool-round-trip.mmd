@@ -1,0 +1,14 @@
+%% Original ADPRO course diagram, 2026. CC BY 4.0. See ../IMAGE_SUGGESTIONS.md.
+%%{init: {"theme": "base", "themeVariables": {"fontFamily": "DejaVu Sans, sans-serif", "fontSize": "19px", "primaryColor": "#e8f1fb", "primaryTextColor": "#10233f", "primaryBorderColor": "#355e85", "lineColor": "#43566e", "secondaryColor": "#e8f5ed", "tertiaryColor": "#fff3dd"}, "flowchart": {"htmlLabels": false, "nodeSpacing": 30, "rankSpacing": 40}, "sequence": {"actorFontSize": 18, "messageFontSize": 17, "noteFontSize": 17, "wrap": true}}}%%
+sequenceDiagram
+    participant A as Python harness
+    participant M as Model or replay
+    participant T as Read-only tool
+    A->>M: Request 1: prompt and tools
+    M-->>A: Lookup proposal, call_id c1, JSON arguments
+    Note over A: Check allowlist and validate arguments
+    A->>T: find_observations(PRT:2023)
+    T-->>A: Validated lookup result
+    A->>M: Request 2: output linked to call_id c1
+    M-->>A: Final answer JSON
+    Note over A: Validate Answer and inspect factual claims

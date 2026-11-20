@@ -1,0 +1,45 @@
+{
+  "provenance": "Hand-authored illustrative Responses subsets; not live captures or model evaluations.",
+  "prompt": "What is the combined population in the saved 2023 data?",
+  "expected": "Use get_summary; report the two-country total 58,930,702 persons, not a world total.",
+  "steps": [
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "function_call",
+            "name": "get_summary",
+            "arguments": "{}",
+            "call_id": "call_1"
+          }
+        ]
+      }
+    },
+    {
+      "response": {
+        "status": "completed",
+        "output": [
+          {
+            "type": "message",
+            "role": "assistant",
+            "content": [
+              {
+                "type": "output_text",
+                "text": "{\"answer\": \"The two-country total is 58,930,702 persons in the saved 2023 snapshot.\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "expects": {
+        "call_id": "call_1",
+        "result": {
+          "count": 2,
+          "total": 58930702.0,
+          "mean": 29465351.0
+        }
+      }
+    }
+  ]
+}

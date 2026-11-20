@@ -68,4 +68,4 @@ AI coding assistance is permitted. You remain responsible for explaining, testin
 
 ## Illustrations
 
-Three local Creative Commons illustrations are embedded at the relevant teaching points. Keep the `images/` folder with the notebooks. [Sources, credits, alternative text, and teaching notes](IMAGE_SUGGESTIONS.md) identify the exact license or CC0 dedication for each image.
+Six local Creative Commons illustrations (including three original Mermaid diagrams) are embedded at the relevant teaching points. Keep the `images/` folder with the notebooks. [Sources, credits, alternative text, and teaching notes](IMAGE_SUGGESTIONS.md) identify the exact license or CC0 dedication for each image.

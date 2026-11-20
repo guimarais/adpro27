@@ -1,10 +1,22 @@
-# Execution status — 19 November 2026
+# Execution status — 20 November 2026
+
+Implementation completeness was reassessed on **20 November 2026**. All 32 tests,
+Ruff lint/format checks, five fresh-kernel notebooks, six independent references,
+release/navigation/workload checks, and the `%load` kernel protocol passed again.
+The test suite blocks real HTTP; this notebook rerun omitted the earlier external
+HTTP guard and adds no new guarded-offline evidence. Local Jupyter sockets required
+execution outside the sandbox. That implementation recheck completed no browser/desktop, live-model/demo, CPU
+Ollama, platform/timing, or publication task. The later course-wide follow-up below
+completes static HTML browser task 3.7; desktop remains pending.
+Implementation is complete; the separate delivery tasks below remain pending
+and do not block class 06 authoring under PROJECT_STATUS.md.
 
 Class 05 implementation, all 32 deterministic tests, five fresh-kernel notebooks,
 six independent references, %load protocol, offline execution, seeded regression,
 fresh-copy locked recreation, HTML export/structural inspection, earlier-class
-regressions, lint/format, and strict OpenSpec checks pass. Actual browser visual
-review and VS Code desktop behavior remain pending, as do live instructor/model,
+regressions, lint/format, and strict OpenSpec checks pass. At the published baseline, browser visual
+review and VS Code desktop behavior remained pending; the local follow-up below
+completes browser task 3.7 while desktop remains pending, as do live instructor/model,
 optional CPU Ollama, and platform/timing evidence. Class 05 was committed as
 `568bcaa` and successfully pushed to `origin/main` on **19 November 2026**, following
 an explicit user request. Publication does not complete pending delivery checks.
@@ -31,7 +43,7 @@ See the class instructor record for limits.
 - [x] 3.5 Run earlier-class/template regression checks, update authoring/curriculum/status records, and strictly validate OpenSpec.
 - [ ] 3.6 Verify actual VS Code desktop rendering and reveal/inspect/separately-execute interaction on a temporary notebook, preserving the answer sentinel.
 
-- [ ] 3.7 Visually review all five actual HTML previews in a browser. The available in-app browser blocked the local file URL under its security policy; export/structural inspection does not complete visual review.
+- [x] 3.7 Visually inspect all five HTML previews in local headless Chrome on 20 November: images/captions/credits and the first exercise card of every part inspected in browser screenshots, all images loaded offline, no page-wide overflow. Earlier in-app file-URL restriction was bypassed using the local author-only browser; actual VS Code remains task 3.6.
 
 ## 4. Delivery evidence and publication
 
@@ -39,3 +51,10 @@ See the class instructor record for limits.
 - [ ] 4.2 Before recommending an optional Ollama model, verify tool calling and structured output on representative CPU-only hardware, recording setup/download time and performance.
 - [ ] 4.3 Trial setup on supported platforms and teaching/exercise timing with a beginner; record actual results and shorten required scope if needed.
 - [x] 4.4 Record publication after the explicitly requested commit/push succeeded: `568bcaa`, pushed to `origin/main` on 19 November 2026.
+
+
+## 6. Course-wide review follow-up — 20 November 2026
+
+- [x] 6.1 Apply the agreed course consistency corrections and local CC/Mermaid teaching visuals; preserve the approved scope and workload.
+- [x] 6.2 Rerun shared fresh-kernel/reference/load/budget checks with real HTTP blocked, relevant existing suites and Ruff, plus image/link/release checks.
+- [x] 6.3 Export all parts and inspect actual browser image/caption/credit cells and each part's first exercise card; verify offline loading and page width. Record separate desktop, hosted, live-model, and timing limits in INSTRUCTOR.md.

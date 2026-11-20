@@ -21,6 +21,16 @@ All validation, tool implementations, SDK handling, and loop management SHALL be
 supplied. Required student code changes SHALL be individual expressions or lines;
 no dispatcher, loop, new tool, or test suite implementation SHALL be assigned.
 
+The course outcome SHALL describe building a small harness from supplied components.
+Students SHALL connect the permitted lookup, change one validated label in the
+existing 15-minute follow-up, and inspect the changed result together with successful
+and rejected calls. This SHALL NOT require implementing the supplied dispatcher or loop.
+
+#### Scenario: Student changes a validated lookup input
+- **WHEN** the student changes the connected lookup from PRT:2023 to FRA:2023
+- **THEN** the same supplied function returns an empty list instead of a Portugal row
+- **AND** the student explains that absence is valid while forbidden names and invalid arguments are rejected
+
 #### Scenario: Student attempts the dispatch exercise
 - **WHEN** the student follows Exercise 05.2.E1
 - **THEN** only one dictionary-key expression needs completing
@@ -126,3 +136,19 @@ SHALL only be recorded after a successful publication action.
 #### Scenario: Only automated and static checks are available
 - **WHEN** the execution record is updated
 - **THEN** those checks do not complete desktop or live-model tasks
+
+
+### Requirement: Offline teaching illustrations
+
+The approved course-wide review SHALL be reflected in local teaching illustrations
+(5 in this class), captions, meaningful alternative text, and source/license
+records. Reused images SHALL retain file-specific credits and licenses. Original
+course-specific diagrams SHALL retain editable Mermaid sources and CC BY 4.0
+credits, alongside local PNG renderings. Images SHALL explain existing concepts
+within the unchanged workload; their display SHALL NOT require network access or
+a student-installed renderer.
+
+#### Scenario: Student opens the complete class folder offline
+- **WHEN** a notebook displays a teaching illustration
+- **THEN** it reads the bundled PNG and supplies a textual explanation and credit
+- **AND** editable source and license information are available locally or through the source guide
